@@ -668,7 +668,7 @@ function App() {
               <div className="flex items-start">
                 <Mail className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Secure Comms</h4>
+                  <h4 className="text-lg font-medium text-white">Secure Email</h4>
                   {/* <p className="text-gray-400">tpo@aryacollege.in</p> */}
                   <p className="text-gray-400">aryastudentclubs@gmail.com </p>
                 </div>
@@ -676,7 +676,7 @@ function App() {
               <div className="flex items-start">
                 <Phone className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Secure Comms</h4>
+                  <h4 className="text-lg font-medium text-white">Secure Contacts</h4>
                   <p className="text-gray-400">+91 9653926918 Lalit Punjabi</p>
                   <p className="text-gray-400">+91 9256954320 Amit Kumar</p>
                 </div>
