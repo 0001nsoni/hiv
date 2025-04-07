@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Tungsten';
+  src: url('/fonts/Tungsten-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --valorant-red: #ff4655;
+  --valorant-dark: #0f1923;
+  --valorant-blue: #1f2f3f;
+  --valorant-light: #ece8e1;
+  --valorant-accent: #ff4655;
+  --valorant-green: #00ffb3;
+  --valorant-purple: #bd3996;
+}
+
+body {
+  background-color: var(--valorant-dark);
+  color: var(--valorant-light);
+  font-family: 'Inter', sans-serif;
+  background-image: 
+    linear-gradient(rgba(15, 25, 35, 0.97), rgba(15, 25, 35, 0.97)),
+    url('/images/valorant-bg-pattern.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.valorant-font {
+  font-family: 'VALORANT', sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.valorant-gradient {
+  background: linear-gradient(135deg, var(--valorant-dark) 0%, var(--valorant-blue) 100%);
+}
+
+.valorant-glow {
+  text-shadow: 0 0 10px var(--valorant-red),
+               0 0 20px var(--valorant-red),
+               0 0 30px var(--valorant-red);
+}
+
+.valorant-text-gradient {
+  background: linear-gradient(135deg, var(--valorant-light) 0%, var(--valorant-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.valorant-button {
+  @apply px-6 py-3 bg-[#ff4655] text-white font-bold rounded-none 
+         border-2 border-[#ff4655] transition-all duration-300
+         hover:bg-transparent hover:text-[#ff4655]
+         active:scale-95 valorant-font relative overflow-hidden;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.valorant-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.valorant-button:hover::before {
+  left: 100%;
+}
+
+.valorant-section {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, var(--valorant-dark) 0%, var(--valorant-blue) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+}
+
+.valorant-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff4655' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.valorant-card-hover {
+  @apply transition-all duration-300;
+  background: rgba(15, 25, 35, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 70, 85, 0.1);
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.valorant-card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--valorant-red);
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+}
+
+.valorant-border {
+  border: 2px solid var(--valorant-red);
+  box-shadow: 0 0 10px rgba(255, 70, 85, 0.3);
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.section-title {
+  @apply text-5xl font-bold mb-12 text-center valorant-font;
+  background: linear-gradient(135deg, var(--valorant-light) 60%, var(--valorant-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--valorant-red);
+}
+
+.theme-card {
+  @apply p-6 rounded-lg valorant-card-hover;
+}
+
+/* Valorant-specific animations */
+@keyframes valorant-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes valorant-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.valorant-pulse {
+  animation: valorant-pulse 2s infinite;
+}
+
+.valorant-glitch {
+  animation: valorant-glitch 0.3s ease-in-out infinite;
+}
+
+/* Valorant-specific hover effects */
+.valorant-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.valorant-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 70, 85, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.valorant-hover-effect:hover::after {
+  left: 100%;
+}
+
+/* Valorant-specific scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--valorant-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--valorant-red);
+  border-radius: 0;
+  clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--valorant-red), var(--valorant-purple));
+}
+
+/* Valorant-specific selection */
+::selection {
+  background: var(--valorant-red);
+  color: var(--valorant-light);
+}
+
+/* Valorant-specific utility classes */
+.valorant-clip {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.valorant-bg-gradient {
+  background: linear-gradient(135deg, var(--valorant-dark), var(--valorant-blue));
+}
+
+.valorant-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Valorant-specific card effects */
+.agent-card {
+  @apply relative overflow-hidden valorant-card-hover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 70, 85, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.6s;
+  opacity: 0;
+}
+
+.agent-card:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* Valorant-specific loading animation */
+@keyframes valorant-loading {
+  0% { width: 0; left: 0; }
+  50% { width: 100%; left: 0; }
+  100% { width: 0; left: 100%; }
+}
+
+.valorant-loading-bar {
+  position: relative;
+  height: 2px;
+  background: var(--valorant-dark);
+  overflow: hidden;
+}
+
+.valorant-loading-bar::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  background: var(--valorant-red);
+  animation: valorant-loading 2s infinite;
+}
+
+/* Valorant-style page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Valorant-style reveal animations */
+@keyframes valorant-reveal {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.valorant-reveal {
+  animation: valorant-reveal 0.6s ease-out forwards;
+}
+
+/* Valorant-style damage indicator */
+@keyframes valorant-damage {
+  0% {
+    border-color: var(--valorant-red);
+    box-shadow: 0 0 20px var(--valorant-red);
+  }
+  50% {
+    border-color: transparent;
+    box-shadow: none;
+  }
+  100% {
+    border-color: var(--valorant-red);
+    box-shadow: 0 0 20px var(--valorant-red);
+  }
+}
+
+.valorant-damage {
+  animation: valorant-damage 0.5s ease-in-out;
+}
+
+/* Valorant-style ability highlight */
+@keyframes valorant-ability {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.valorant-ability {
+  background: linear-gradient(
+    90deg,
+    var(--valorant-dark) 0%,
+    var(--valorant-red) 50%,
+    var(--valorant-dark) 100%
+  );
+  background-size: 200% 100%;
+  animation: valorant-ability 2s ease infinite;
+}
+
+/* Valorant-style kill indicator */
+@keyframes valorant-kill {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.valorant-kill {
+  animation: valorant-kill 1s ease-in-out;
+}
+
+/* Valorant-style ultimate ready */
+@keyframes valorant-ultimate {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0 var(--valorant-red));
+  }
+  50% {
+    filter: brightness(1.5) drop-shadow(0 0 10px var(--valorant-red));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 var(--valorant-red));
+  }
+}
+
+.valorant-ultimate {
+  animation: valorant-ultimate 2s ease-in-out infinite;
+}
+
+/* Valorant-style agent select */
+.valorant-agent-select {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.valorant-agent-select::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 0%, var(--valorant-red) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.valorant-agent-select:hover::before {
+  opacity: 0.1;
+}
+
+/* Valorant-style map overlay */
+.valorant-map-overlay {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--valorant-dark),
+    var(--valorant-dark) 10px,
+    rgba(255, 70, 85, 0.1) 10px,
+    rgba(255, 70, 85, 0.1) 20px
+  );
+}
+
+/* Valorant-style spike plant */
+@keyframes valorant-spike {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 70, 85, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 70, 85, 0);
+  }
+}
+
+.valorant-spike {
+  animation: valorant-spike 2s infinite;
+}
+
+/* Enhanced card hover effects */
+.valorant-card-hover {
+  @apply transition-all duration-300;
+  background: rgba(15, 25, 35, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 70, 85, 0.1);
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.valorant-card-hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 70, 85, 0.1),
+    transparent
+  );
+  transform: rotate(45deg) translateX(-100%);
+  transition: 0.6s;
+}
+
+.valorant-card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--valorant-red);
+  box-shadow: 0 0 20px rgba(255, 70, 85, 0.2);
+}
+
+.valorant-card-hover:hover::after {
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* Enhanced button effects */
+.valorant-button {
+  @apply px-6 py-3 bg-[#ff4655] text-white font-bold rounded-none 
+         border-2 border-[#ff4655] transition-all duration-300
+         hover:bg-transparent hover:text-[#ff4655]
+         active:scale-95 valorant-font relative overflow-hidden;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  position: relative;
+}
+
+.valorant-button::before,
+.valorant-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.valorant-button:hover::before {
+  transform: translateX(100%);
+}
+
+.valorant-button:active::after {
+  transform: translateX(0);
+  background: rgba(255, 255, 255, 0.3);
+  transition: none;
+}
