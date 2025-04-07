@@ -210,13 +210,13 @@ function CountdownTimer() {
   }, []);
 
   return (
-    <div className="flex gap-8 text-white">
+    <div className="flex flex-wrap gap-4 sm:gap-8 text-white justify-center">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="text-center">
-          <div className="text-4xl font-bold valorant-glow bg-[#1f2f3f] p-4 rounded-none valorant-clip">
+          <div className="text-2xl sm:text-4xl font-bold valorant-glow bg-[#1f2f3f] p-2 sm:p-4 rounded-none valorant-clip">
             {value.toString().padStart(2, '0')}
           </div>
-          <div className="mt-2 uppercase tracking-wider">{unit}</div>
+          <div className="mt-1 sm:mt-2 text-xs sm:text-sm uppercase tracking-wider">{unit}</div>
         </div>
       ))}
     </div>
@@ -272,7 +272,7 @@ const sponsors = [
     sponsors: [
       { name: 'Geeks For Geeks', logo: `${Gfg}` },
       { name: "CodeUp", logo: `${cup}` },
-      { name: "Devfolio", logo: `${Dev}` }
+   
     ]
   },
   {
@@ -458,7 +458,7 @@ function App() {
 
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0f1923]"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0f1923] mt-12 lg:mt-20 mb-12 lg:mb-20"
         style={{
           backgroundImage: `url(${valorantBg})`,
           backgroundSize: 'cover',
@@ -470,23 +470,30 @@ function App() {
         <div className="absolute inset-0 bg-black/30"></div>
         
         {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center text-center px-4">
-          <div className="mb-8 w-[40%] valorant-reveal">
+        <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[600px]">
+          <div className="mb-6 lg:mb-8 w-[70%] sm:w-[40%] lg:w-[30%] valorant-reveal">
             <img src={hlogo} alt="Hack Arya Verse Logo" className="mx-auto mb-4" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold valorant-glow mb-4 valorant-reveal">HACK ARYA VERSE</h1>
-          <p className="text-xl md:text-2xl mb-8 valorant-text-gradient valorant-reveal">Where Innovation Meets Tactical Brilliance</p>
-          <div className="valorant-reveal">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold valorant-glow mb-4 lg:mb-6 valorant-reveal leading-tight">
+            HACK ARYA VERSE
+          </h1>
+          <p className="text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 valorant-text-gradient valorant-reveal leading-relaxed">
+            Where Innovation Meets Tactical Brilliance
+          </p>
+          <div className="valorant-reveal mb-6 lg:mb-8">
             <CountdownTimer />
           </div>
-          <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center valorant-reveal">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center valorant-reveal">
             <button 
               className="valorant-button group"
               onClick={() => window.location.href = 'https://lu.ma/dv6q75cg'}
             >
               <span className="group-hover:valorant-glitch">Register Now</span>
             </button>
-            <button className="valorant-button bg-transparent group">
+            <button 
+              className="valorant-button bg-transparent group"
+              onClick={() => window.location.href = 'https://linktr.ee/hack_arya_verse'}
+            >
               <span className="group-hover:valorant-glitch">Know More</span>
             </button>
           </div>
