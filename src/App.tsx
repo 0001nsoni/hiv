@@ -669,16 +669,16 @@ function App() {
                 <Mail className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
                   <h4 className="text-lg font-medium text-white">Secure Comms</h4>
-                  <p className="text-gray-400">tpo@aryacollege.in</p>
-                  <p className="text-gray-400">aryastudentclubes@aryacollege.in</p>
+                  {/* <p className="text-gray-400">tpo@aryacollege.in</p> */}
+                  <p className="text-gray-400">aryastudentclubs@gmail.com </p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
                   <h4 className="text-lg font-medium text-white">Secure Comms</h4>
-                  <p className="text-gray-400">+91 8958149867</p>
-                  <p className="text-gray-400">+91 9324264950</p>
+                  <p className="text-gray-400">+91 9653926918 Lalit Punjabi</p>
+                  <p className="text-gray-400">+91 9256954320 Amit Kumar</p>
                 </div>
               </div>
               
