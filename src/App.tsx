@@ -60,6 +60,24 @@ import {
   Codesandbox
 } from 'lucide-react';
 
+// Loader component
+const Loader = () => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0f1923]">
+      <div className="text-center">
+        <div className="relative w-32 h-32 mx-auto mb-8">
+          {/* Valorant-inspired loader animation */}
+          <div className="absolute inset-0 border-4 border-[#ff4655] border-t-transparent rounded-full animate-spin"></div>
+          <div className="absolute inset-4 border-4 border-[#0f1923] border-b-transparent rounded-full animate-spin animation-delay-150"></div>
+          <div className="absolute inset-8 border-4 border-[#ff4655] border-l-transparent rounded-full animate-spin animation-delay-300"></div>
+        </div>
+        <h2 className="text-2xl font-bold text-[#ff4655] mb-2">LOADING MISSION DATA</h2>
+        <p className="text-gray-400">Initializing tactical systems...</p>
+      </div>
+    </div>
+  );
+};
+
 // Valorant agent roles for theme categories
 const agentRoles = {
   DUELIST: 'Duelist',
@@ -224,15 +242,60 @@ function CountdownTimer() {
 }
 
 const themes = [
-  { icon: Sword, title: 'AI & Machine Learning', role: agentRoles.DUELIST },
-  { icon: Shield, title: 'Cybersecurity', role: agentRoles.SENTINEL },
-  { icon: Target, title: 'Web & App Development', role: agentRoles.INITIATOR },
-  { icon: Cloud, title: 'Cloud & DevOps', role: agentRoles.CONTROLLER },
-  { icon: Blocks, title: 'Web3 & Blockchain', role: agentRoles.SENTINEL },
-  { icon: Gamepad2, title: 'Game Development', role: agentRoles.DUELIST },
-  { icon: Cpu, title: 'IoT', role: agentRoles.CONTROLLER },
-  { icon: Eye, title: 'AR/VR', role: agentRoles.INITIATOR },
-  { icon: Lightbulb, title: 'Open Innovation', role: agentRoles.DUELIST }
+  { 
+    icon: Sword, 
+    title: 'AI & Machine Learning', 
+    role: agentRoles.DUELIST, 
+    description: 'Intelligent solutions using AI models & Open Innovation.' 
+  },
+  { 
+    icon: Shield, 
+    title: 'Cybersecurity', 
+    role: agentRoles.SENTINEL, 
+    description: 'Strengthening digital defenses with AI-driven threat detection and blockchain security.' 
+  },
+  { 
+    icon: Blocks, 
+    title: 'Web 3.0 & Blockchain', 
+    role: agentRoles.SENTINEL, 
+    description: 'Building a secure, decentralized, and transparent digital world with blockchain.' 
+  },
+  { 
+    icon: Target, 
+    title: 'Web & App Development', 
+    role: agentRoles.INITIATOR, 
+    description: 'Innovative and functional applications & Open Innovation.' 
+  },
+  { 
+    icon: Gamepad2, 
+    title: 'Game Development', 
+    role: agentRoles.DUELIST, 
+    description: 'Game development is the process of designing, creating, and programming interactive digital games.' 
+  },
+  { 
+    icon: Eye, 
+    title: 'AR/VR', 
+    role: agentRoles.INITIATOR, 
+    description: 'AR/VR blends the real and virtual worlds to create immersive, interactive experiences.' 
+  },
+  { 
+    icon: Cpu, 
+    title: 'IoT & Smart Devices', 
+    role: agentRoles.CONTROLLER, 
+    description: 'Tech solutions for social good & Open Innovation.' 
+  },
+  { 
+    icon: Cloud, 
+    title: 'Cloud & DevOps', 
+    role: agentRoles.CONTROLLER, 
+    description: 'Cloud and DevOps streamline app delivery through automation, scalability, and continuous deployment.' 
+  },
+  { 
+    icon: Lightbulb, 
+    title: 'Open Innovation', 
+    role: agentRoles.DUELIST, 
+    description: 'Open innovation encourages collaboration and idea-sharing across diverse teams to develop creative, real-world solutions.' 
+  }
 ];
 
 const mentors = [
@@ -418,6 +481,53 @@ function TimelineSection() {
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading all resources
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Adjust this time as needed
+
+    // You can also use this for actual image loading:
+    const imageUrls = [
+      valorantBg, 
+      hlogo,
+      Arya,
+      Cipher,
+      Dev,
+      Gfg,
+      Hack,
+      Lincom,
+      movie,
+      photo,
+      wem,
+      AIC,
+      IIC,
+      cup
+    ];
+
+    const loadImages = imageUrls.map(url => {
+      const img = new Image();
+      img.src = url;
+      return new Promise((resolve) => {
+        img.onload = resolve;
+        img.onerror = resolve; // Continue even if some images fail
+      });
+    });
+
+    Promise.all(loadImages).then(() => {
+      setIsLoading(false);
+    });
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className="min-h-screen bg-valorant-gradient text-gray-100">
@@ -553,9 +663,7 @@ function App() {
                     <span className="ml-2 text-sm text-[#ff4655]">{theme.role}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2 valorant-text-gradient">{theme.title}</h3>
-                  <p className="text-gray-400">
-                    Deploy cutting-edge solutions in {theme.title.toLowerCase()}
-                  </p>
+                  <p className="text-gray-400">{theme.description}</p>
                 </div>
               );
             })}
@@ -668,9 +776,9 @@ function App() {
               <div className="flex items-start">
                 <Mail className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Secure Email</h4>
+                  <h1 className="text-lg font-medium text-white">Secure Email</h1>
                   {/* <p className="text-gray-400">tpo@aryacollege.in</p> */}
-                  <p className="text-gray-400">aryastudentclubs@gmail.com </p>
+                  <p className="text-gray-400">aryastudentclubs@aryacollege.in </p>
                 </div>
               </div>
               <div className="flex items-start">
