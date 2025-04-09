@@ -411,6 +411,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <a href="#timeline" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Timeline</a>
             <a href="#tracks" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Tracks</a>
             <a href="#faqs" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>FAQs</a>
+            <a href="#belongings" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Belongings</a>
             <a href="#contact" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Contact</a>
           </div>
         </div>
