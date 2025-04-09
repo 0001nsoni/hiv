@@ -199,7 +199,7 @@ const faqsData = {
     },
     {
       question: "What is the team size?",
-      answer: "Teams can consist of 2-4 members. You can register as a team or individually and we'll help you find teammates during our team formation session."
+      answer: "Teams can consist of 1-4 members. You can register as a team or individually and we'll help you find teammates during our team formation session."
     },
     {
       question: "Is there any registration fee?",
@@ -223,7 +223,7 @@ const faqsData = {
   logistics: [
     {
       question: "Will there be travel reimbursements?",
-      answer: "We may provide limited travel reimbursements on a case-by-case basis. Please contact us for more information."
+      answer: "No, we are unable to provide travel reimbursements for participants."
     },
     {
       question: "What should we bring?",
@@ -648,14 +648,14 @@ function App() {
         
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[600px]">
-          <div className="mb-6 lg:mb-8 w-[70%] sm:w-[40%] lg:w-[30%] valorant-reveal">
+          <div className="mb-6 lg:mb-8 w-[90%] sm:w-[40%] lg:w-[50%] valorant-reveal">
             <img src={hlogo} alt="Hack Arya Verse Logo" className="mx-auto mb-4" />
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold valorant-glow mb-4 lg:mb-6 valorant-reveal leading-tight">
             HACK ARYA VERSE
           </h1>
           <p className="text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 valorant-text-gradient valorant-reveal leading-relaxed">
-            Where Innovation Meets Tactical Brilliance
+          Plant Ideas, Diffuse Limits
           </p>
           <div className="valorant-reveal mb-6 lg:mb-8">
             <CountdownTimer />
@@ -810,17 +810,15 @@ function App() {
           <div className="mt-16 text-center">
             <h3 className="text-xl font-bold valorant-text-gradient mb-6">Want to join our forces?</h3>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="valorant-button group">
-                <a 
-                  href="https://drive.google.com/file/d/your-sponsorship-pdf-id/view" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group-hover:valorant-glitch"
-                >
-                  <ExternalLink className="inline-block w-4 h-4 mr-2" />
-                  Sponsorship Deck
-                </a>
-              </button>
+              <a
+                href="https://drive.google.com/file/d/1l3awUAQYiHaUPOJDdF_gBJ-dehXOZH2R/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="valorant-button group flex items-center justify-center"
+              >
+                <ExternalLink className="inline-block w-4 h-4 mr-2" />
+                <span>Sponsorship Deck</span>
+              </a>
             </div>
           </div>
         </div>
@@ -836,7 +834,7 @@ function App() {
                 <MapPin className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
                   <h4 className="text-lg font-medium text-white">Base Location</h4>
-                  <p className="text-gray-400">Arya College of Engineering & IT, Jaipur</p>
+                  <p className=" font-mono font-semibold text-gray-400">Arya College of Engineering & IT, Jaipur</p>
                 </div>
               </div>
               
@@ -844,7 +842,7 @@ function App() {
                 <Mail className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
                   <h1 className="text-base sm:text-lg font-medium text-white">Secure Email</h1>
-                  <p className="text-gray-400 break-all text-xs sm:text-sm">
+                  <p className="font-mono font-semibold text-gray-400 break-all text-xs sm:text-sm">
                     aryastudentclubs@aryacollege.in
                   </p>
                 </div>
@@ -853,8 +851,8 @@ function App() {
                 <Phone className="flex-shrink-0 w-6 h-6 text-[#ff4655] mt-1" />
                 <div className="ml-4">
                   <h4 className="text-lg font-medium text-white">Secure Contacts</h4>
-                  <p className="text-gray-400">+91 9653926918 Lalit Punjabi</p>
-                  <p className="text-gray-400">+91 9256954320 Amit Kumar</p>
+                  <p className="text-gray-400 font-semibold font-mono">+91 9653926918 Lalit Punjabi</p>
+                  <p className="text-gray-400 font-semibold font-mono">+91 9256954320 Amit Kumar</p>
                 </div>
               </div>
               
