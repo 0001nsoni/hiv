@@ -8,27 +8,27 @@ import Gfg from "./sp/GFG.png";
 import Hack from "./sp/hack.png";
 import Lincom from "./sp/lincom.jpg";
 import movie from "./sp/movie.jpg";
-import photo from "./sp/photographyclub.jpg"
+import photo from "./sp/photographyclub.jpg";
 import wem from "./sp/wem.jpg";
 import AIC from "./sp/AIC logo.svg";
-import IIC from "./sp/iic.png"
+import IIC from "./sp/iic.png";
 import cup from './sp/UP.png';
 
 import valorantBg from './assets/valorant-bg.jpg';
 import hlogo from './assets/logo.png';
-import { 
-  Gem, 
-  Crown, 
+import {
+  Gem,
+  Crown,
   Award,
   Star,
-  Brain, 
-  Shield, 
+  Brain,
+  Shield,
   Globe2,
-  Cloud, 
-  Blocks, 
+  Cloud,
+  Blocks,
   Newspaper,
-  Gamepad2, 
-  Cpu, 
+  Gamepad2,
+  Cpu,
   Lock,
   Mail,
   MapPin,
@@ -61,7 +61,10 @@ import {
   Utensils,
   Soup,
   Skull,
-  Gavel
+  Gavel,
+  Mic, // Fixed import for Mic
+  Upload, // Fixed import for Upload
+  Music, // Fixed import for Music
 } from 'lucide-react';
 
 // Loader component
@@ -91,79 +94,100 @@ const agentRoles = {
 };
 
 // Timeline Data with Valorant theme
-const timelineData = [
+const day1Data = [
   {
-    time: "12:00 PM",
-    event: "Agent Check-In",
+    time: "11:00 AM",
+    event: "Agent Check-In & Briefing",
     icon: UserCheck,
-    description: "All operatives must check in at the command center"
   },
   {
-    time: "04:00 PM",
+    time: "1:00 PM",
+    event: "Opening Intel Drop",
+    icon: Mic,
+  },
+  {
+    time: "1:30 PM",
+    event: "Theme Decryption",
+    icon: MessageSquare,
+  },
+  {
+    time: "2:00 PM",
     event: "Team Formation",
     icon: Users,
-    description: "Squad assignment and tactical briefing"
   },
   {
-    time: "05:30 PM",
-    event: "Radianite Refuel",
-    icon: Coffee,
-    description: "Energy replenishment for all agents"
+    time: "3:00 PM",
+    event: "Match Start - Code Lock In",
+    icon: Codesandbox,
   },
   {
-    time: "08:00 PM",
-    event: "Dinner Briefing",
+    time: "7:00 PM",
+    event: "Dinner Break",
     icon: Utensils,
-    description: "Team dinner with key takeaways from the day and relaxed planning for tomorrow"
   },
   {
-    time: "09:30 PM",
-    event: "First Tactical Session",
+    time: "9:00 PM",
+    event: "Fun Zone",
+    icon: Music,
+  },
+  {
+    time: "10:00 PM",
+    event: "Mentoring Round 1",
     icon: Shield,
-    description: "Initial combat training and strategy workshop"
   },
   {
-    time: "07:30 AM",
-    event: "Tactical Fuel-Up",
+    time: "12:30 AM",
+    event: "Midnight Ration Drop",
     icon: Coffee,
-    description: "Mission-critical breakfast briefing: carbs for endurance, caffeine for focus"
+  },
+];
+
+const day2Data = [
+  {
+    time: "9:00 AM",
+    event: "Respawn & Recap",
+    icon: Coffee,
   },
   {
-    time: "08:00 AM",
-    event: "Second Tactical Session",
-    icon: Sword,
-    description: "Advanced combat techniques and final preparations"
+    time: "10:00 AM",
+    event: "Mentoring Round 2",
+    icon: Shield,
   },
   {
     time: "12:00 PM",
-    event: "Viper's Elimination",
-    icon: Skull,
-    description: "Only the strong survive - bottom performers face immediate consequences"
+    event: "Lunch & Lounge",
+    icon: Utensils,
   },
   {
-    time: "12:30 PM",
-    event: "Combat Rations Refuel",
-    icon: Soup,
-    description: "Field resupply - hot chow before afternoon maneuvers"
-  },
-  {
-    time: "01:30 PM",
-    event: "Viper's Final Decree",
-    icon: Gavel,
-    description: "No more warnings - underperformers are permanently cut from the operation"
-  },
-  {
-    time: "12:30 PM",
-    event: "Final Briefing",
-    icon: Crosshair,
-    description: "Last-minute strategy before the final mission"
-  },
-  {
-    time: "04:00 PM",
-    event: "Extraction",
+    time: "1:00 PM",
+    event: "Final Development",
     icon: Codesandbox,
-    description: "Mission complete - all agents return to base"
-  }
+  },
+  {
+    time: "3:00 PM",
+    event: "Code Upload & Prep",
+    icon: Upload,
+  },
+  {
+    time: "4:00 PM",
+    event: "Project Demos",
+    icon: MessageSquare,
+  },
+  {
+    time: "6:00 PM",
+    event: "Judge Deliberation",
+    icon: Gavel,
+  },
+  {
+    time: "7:00 PM",
+    event: "Victory Ceremony",
+    icon: Trophy,
+  },
+  {
+    time: "8:00 PM",
+    event: "Mission Complete",
+    icon: Award,
+  },
 ];
 
 // FAQs Data
@@ -446,31 +470,58 @@ function FAQsSection() {
 }
 
 function TimelineSection() {
+  const [activeDay, setActiveDay] = useState(1); // Moved inside the component
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const activeData = activeDay === 1 ? day1Data : day2Data;
 
   return (
     <section id="timeline" className="py-20 px-4 valorant-section">
       <div className="max-w-6xl mx-auto">
         <h2 className="section-title">Mission Timeline</h2>
-        
+
+        {/* Day Selector Buttons */}
+        <div className="flex justify-center gap-4 mb-12">
+          <button
+            onClick={() => setActiveDay(1)}
+            className={`valorant-button ${activeDay === 1 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
+          >
+            <span>Day 1: Mission Launch</span>
+          </button>
+          <button
+            onClick={() => setActiveDay(2)}
+            className={`valorant-button ${activeDay === 2 ? 'bg-[#ff4655]' : 'bg-transparent'}`}
+          >
+            <span>Day 2: Final Push</span>
+          </button>
+        </div>
+
+        {/* Timeline Content */}
         <div className="relative">
-          {/* Timeline line */}
+          {/* Timeline Line */}
           <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-[#ff4655] transform -translate-x-1/2"></div>
-          
+
           <div className="space-y-12">
-            {timelineData.map((item, index) => {
+            {activeData.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div 
-                  key={index} 
-                  className={`relative pl-12 md:pl-0 md:flex ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} transition-all duration-500 ${activeIndex === index ? 'scale-105' : 'scale-100'}`}
+                <div
+                  key={index}
+                  className={`relative pl-12 md:pl-0 md:flex ${
+                    index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+                  } transition-all duration-500 ${activeIndex === index ? 'scale-105' : 'scale-100'}`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onMouseLeave={() => setActiveIndex(null)}
                 >
-                  {/* Timeline dot */}
+                  {/* Timeline Dot */}
                   <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-[#ff4655] rounded-full transform -translate-x-1/2 z-10"></div>
-                  
-                  <div className={`theme-card valorant-card-hover group w-full md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+
+                  {/* Timeline Card */}
+                  <div
+                    className={`theme-card valorant-card-hover group w-full md:w-5/12 ${
+                      index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'
+                    }`}
+                  >
                     <div className="flex items-start">
                       <div className="mr-4 mt-1">
                         <Icon className="w-6 h-6 text-[#ff4655] valorant-pulse" />
@@ -481,7 +532,6 @@ function TimelineSection() {
                           <span className="text-sm text-gray-400">{item.time}</span>
                         </div>
                         <h3 className="text-xl font-bold mb-1 valorant-text-gradient">{item.event}</h3>
-                        <p className="text-gray-400">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -822,7 +872,7 @@ function App() {
                     <a href="https://www.linkedin.com/company/hack-arya-verse" className="text-gray-400 hover:text-[#ff4655] transition-colors">
                       <Linkedin className="w-6 h-6" />
                     </a>
-                    <a href="https://t.me/hackaryaverse" className='text-gray-400 hover:text-[#ff4655] transition-colors'>
+                    <a href="https://t.me/hackaryaverse" className="hover:text-[#ff4655] transition-colors">
                       <RiTelegramLine className="w-6 h-6" />
                     </a>
                     <a href="https://discord.gg/J6e8ZRpb" className='text-gray-400 hover:text-[#ff4655] transition-colors'>
