@@ -57,7 +57,11 @@ import {
   Coffee,
   BookOpen,
   Award as Trophy,
-  Codesandbox
+  Codesandbox,
+  Utensils,
+  Soup,
+  Skull,
+  Gavel
 } from 'lucide-react';
 
 // Loader component
@@ -101,16 +105,16 @@ const timelineData = [
     description: "Squad assignment and tactical briefing"
   },
   {
-    time: "05:00 PM",
+    time: "05:30 PM",
     event: "Radianite Refuel",
     icon: Coffee,
     description: "Energy replenishment for all agents"
   },
   {
-    time: "07:30 AM",
-    event: "Morning Briefing",
-    icon: BookOpen,
-    description: "Daily mission objectives and strategy session"
+    time: "08:00 PM",
+    event: "Dinner Briefing",
+    icon: Utensils,
+    description: "Team dinner with key takeaways from the day and relaxed planning for tomorrow"
   },
   {
     time: "09:30 PM",
@@ -119,10 +123,10 @@ const timelineData = [
     description: "Initial combat training and strategy workshop"
   },
   {
-    time: "08:00 PM",
-    event: "Victory Feast",
-    icon: Trophy,
-    description: "Celebration of day one accomplishments"
+    time: "07:30 AM",
+    event: "Tactical Fuel-Up",
+    icon: Coffee,
+    description: "Mission-critical breakfast briefing: carbs for endurance, caffeine for focus"
   },
   {
     time: "08:00 AM",
@@ -131,16 +135,28 @@ const timelineData = [
     description: "Advanced combat techniques and final preparations"
   },
   {
+    time: "12:00 PM",
+    event: "Viper's Elimination",
+    icon: Skull,
+    description: "Only the strong survive - bottom performers face immediate consequences"
+  },
+  {
+    time: "12:30 PM",
+    event: "Combat Rations Refuel",
+    icon: Soup,
+    description: "Field resupply - hot chow before afternoon maneuvers"
+  },
+  {
+    time: "01:30 PM",
+    event: "Viper's Final Decree",
+    icon: Gavel,
+    description: "No more warnings - underperformers are permanently cut from the operation"
+  },
+  {
     time: "12:30 PM",
     event: "Final Briefing",
     icon: Crosshair,
     description: "Last-minute strategy before the final mission"
-  },
-  {
-    time: "01:30 PM",
-    event: "Viper's Verdict",
-    icon: Award,
-    description: "Judgment and evaluation of all operations"
   },
   {
     time: "04:00 PM",
