@@ -5,7 +5,7 @@ import Arya from "./sp/Arya.png";
 import Cipher from "./sp/cipher.jpg";
 import Dev from "./sp/DEV.png";
 import Gfg from "./sp/GFG.png";
-import Hack from "./sp/hack.png";
+import Hack from "./sp/hack.jpg";
 import Lincom from "./sp/lincom.jpg";
 import movie from "./sp/movie.jpg";
 import photo from "./sp/photographyclub.jpg";
@@ -65,6 +65,8 @@ import {
   Mic, // Fixed import for Mic
   Upload, // Fixed import for Upload
   Music, // Fixed import for Music
+  AlertTriangle,
+  Laptop,
 } from 'lucide-react';
 
 // Loader component
@@ -365,7 +367,7 @@ const sponsors = [
       { name: "Arya Incubation Center", logo: `${AIC}` },
       { name: "IIC", logo: `${IIC}` },
       { name: "Arya Cipher Club", logo: `${Cipher}` },
-      { name: "Arya Hackthone Club", logo: `${Hack}` },
+      { name: "Arya Hackathone Club", logo: `${Hack}` },
       { name: "Arya Lincom Club", logo: `${Lincom}` }
     ]
   },
@@ -545,6 +547,111 @@ function TimelineSection() {
   );
 }
 
+function BelongingsSection() {
+  return (
+    <section id="belongings" className="py-10 px-4 valorant-section">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="section-title text-center text-lg sm:text-2xl">Agent Essentials</h2>
+        
+        <div className="theme-card valorant-card-hover p-4 sm:p-8">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 valorant-text-gradient">Required Mission Gear</h3>
+          
+          {/* Student ID Card - Highlighted Item */}
+          <div className="group relative p-4 sm:p-6 mb-4 sm:mb-6 bg-[#1a242d] border border-[#ff4655]/30 hover:border-[#ff4655] transition-all rounded-lg valorant-pulse">
+            <div className="flex items-start flex-wrap">
+              <div className="bg-[#ff4655] p-2 rounded-full mr-4">
+                <UserCheck className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-sm sm:text-base w-full">
+                <h4 className="text-base sm:text-lg font-bold text-white mb-1 flex items-center">
+                  Student College ID Card
+                  <span className="ml-2 px-2 py-1 text-xs bg-[#ff4655] rounded-full">MANDATORY</span>
+                </h4>
+                <p className="text-gray-300">
+                  Original physical ID card issued by your educational institution with:
+                </p>
+                <ul className="mt-2 space-y-1 text-gray-400 pl-5 list-disc">
+                  <li>Clear photo identification</li>
+                  <li>Valid academic year (2024-25)</li>
+                  <li>Institution seal/stamp</li>
+                  <li>No photocopies/digital versions accepted</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 p-3 bg-[#0f1923] border border-[#ff4655]/20 rounded-sm">
+              <p className="text-xs sm:text-sm text-gray-300 flex items-start">
+                <Shield className="w-4 h-4 text-[#ff4655] mt-1 mr-2 flex-shrink-0" />
+                <span>Without this ID, you <span className="text-[#ff4655] font-medium">will not</span> be granted access to the venue or allowed to participate.</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Other Requirements */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="p-4 bg-[#1a242d] hover:bg-[#22303d] transition-all rounded-lg border border-[#2a3a4d]">
+              <div className="flex items-start">
+                <div className="bg-[#ff4655] p-1 rounded-full mr-3 mt-1">
+                  <BookOpen className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-lg font-medium text-white">Food Coupons</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Provided at registration - required for all meals</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-[#1a242d] hover:bg-[#22303d] transition-all rounded-lg border border-[#2a3a4d]">
+              <div className="flex items-start">
+                <div className="bg-[#ff4655] p-1 rounded-full mr-3 mt-1">
+                  <Shield className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-lg font-medium text-white">Event ID Badge</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Must be visibly worn at all times</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-[#1a242d] hover:bg-[#22303d] transition-all rounded-lg border border-[#2a3a4d]">
+              <div className="flex items-start">
+                <div className="bg-[#ff4655] p-1 rounded-full mr-3 mt-1">
+                  <X className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-lg font-medium text-white">Prohibited Items</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">No sharp objects, weapons, or hazardous materials</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-[#1a242d] hover:bg-[#22303d] transition-all rounded-lg border border-[#2a3a4d]">
+              <div className="flex items-start">
+                <div className="bg-[#ff4655] p-1 rounded-full mr-3 mt-1">
+                  <Laptop className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm sm:text-lg font-medium text-white">Laptop & Charger</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Essential for hacking (no lab computers provided)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 sm:mt-8 p-4 bg-[#1a242d] border-l-4 border-[#ff4655]">
+            <p className="text-xs sm:text-sm text-gray-300 flex items-start">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-[#ff4655] mr-3 mt-0.5 flex-shrink-0" />
+              <span>
+                <span className="font-bold">Security Protocol:</span> All items subject to security screening. 
+                Counterfeit IDs will result in immediate disqualification and removal from premises.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState<number | null>(null);
@@ -606,11 +713,12 @@ function App() {
               <img src={hlogo} alt="" className='w-16' />
             </div>
             <div className="hidden md:flex space-x-10">
-              <a href="#about" className="text-gray-300 hover:text-[#ff4655] transition-colors valorant-hover-effect">About</a>
-              <a href="#timeline" className="text-gray-300 hover:text-[#ff4655] transition-colors valorant-hover-effect">Timeline</a>
-              <a href="#tracks" className="text-gray-300 hover:text-[#ff4655] transition-colors valorant-hover-effect">Tracks</a>
-              <a href="#faqs" className="text-gray-300 hover:text-[#ff4655] transition-colors valorant-hover-effect">FAQs</a>
-              <a href="#contact" className="text-gray-300 hover:text-[#ff4655] transition-colors valorant-hover-effect">Contact</a>
+              <a href="#about" className="text-gray-300 hover:text-[#ff4655] transition-colors">About</a>
+              <a href="#timeline" className="text-gray-300 hover:text-[#ff4655] transition-colors">Timeline</a>
+              <a href="#tracks" className="text-gray-300 hover:text-[#ff4655] transition-colors">Tracks</a>
+              <a href="#faqs" className="text-gray-300 hover:text-[#ff4655] transition-colors">FAQs</a>
+              <a href="#belongings" className="text-gray-300 hover:text-[#ff4655] transition-colors">Belongings</a>
+              <a href="#contact" className="text-gray-300 hover:text-[#ff4655] transition-colors">Contact</a>
             </div>
             <div className="flex items-center space-x-4">
               <button 
@@ -737,6 +845,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Belongings Section */}
+      <BelongingsSection />
 
       {/* Night Market Section */}
       <section className="py-20 px-4 valorant-section">
