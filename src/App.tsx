@@ -367,7 +367,7 @@ const sponsors = [
       { name: "Arya Incubation Center", logo: `${AIC}` },
       { name: "IIC", logo: `${IIC}` },
       { name: "Arya Cipher Club", logo: `${Cipher}` },
-      { name: "Arya Hackathone Club", logo: `${Hack}` },
+      { name: "Arya Hackathon Club", logo: `${Hack}` },
       { name: "Arya Lincom Club", logo: `${Lincom}` }
     ]
   },
