@@ -532,3 +532,25 @@ body {
   background: rgba(255, 255, 255, 0.3);
   transition: none;
 }
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite;
+}
+
+.hover\:pause:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 350px) {
+  .animate-infinite-scroll {
+    animation-duration: 40s;
+  }
+}

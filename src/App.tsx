@@ -13,6 +13,8 @@ import wem from "./sp/wem.jpg";
 import AIC from "./sp/AIC logo.svg";
 import IIC from "./sp/iic.png";
 import cup from './sp/UP.png';
+import GDG from './sp/18.jpg'
+import { FaLinkedin } from "react-icons/fa";
 
 import valorantBg from './assets/valorant-bg.jpg';
 import hlogo from './assets/logo.png';
@@ -96,100 +98,114 @@ const agentRoles = {
 };
 
 // Timeline Data with Valorant theme
+// Timeline Data with Valorant theme - Updated Schedule
+// Timeline Data with Valorant theme - Precise Timing
 const day1Data = [
   {
-    time: "11:00 AM",
+    time: "12:00",
     event: "Agent Check-In & Briefing",
     icon: UserCheck,
+    duration: "12:00 - 15:30 (3h 30m)"
   },
   {
-    time: "1:00 PM",
-    event: "Opening Intel Drop",
+    time: "16:00",
+    event: "Opening Intel Drop & Theme Decryption",
     icon: Mic,
+    duration: "16:00 - 17:00 (1h)"
   },
   {
-    time: "1:30 PM",
-    event: "Theme Decryption",
-    icon: MessageSquare,
+    time: "17:00",
+    event: "Snacks Break",
+    icon: Utensils,
+    duration: "17:00 - 17:30 (30m)"
   },
   {
-    time: "2:00 PM",
-    event: "Team Formation",
-    icon: Users,
-  },
-  {
-    time: "3:00 PM",
+    time: "17:30",
     event: "Match Start - Code Lock In",
     icon: Codesandbox,
+    duration: "17:30 - Ongoing"
   },
   {
-    time: "7:00 PM",
+    time: "20:00",
     event: "Dinner Break",
     icon: Utensils,
+    duration: "20:00 - 22:00 (2h)"
   },
   {
-    time: "9:00 PM",
+    time: "22:00",
     event: "Fun Zone",
     icon: Music,
+    duration: "22:00 - 23:00 (1h)"
   },
   {
-    time: "10:00 PM",
+    time: "23:00",
     event: "Mentoring Round 1",
     icon: Shield,
+    duration: "23:00 - Ongoing"
   },
   {
-    time: "12:30 AM",
+    time: "01:00",
     event: "Midnight Ration Drop",
     icon: Coffee,
-  },
+    duration: "01:00 - Ongoing"
+  }
 ];
 
 const day2Data = [
   {
-    time: "9:00 AM",
+    time: "09:00",
     event: "Respawn & Recap",
     icon: Coffee,
+    duration: "09:00 - 10:00 (1h)"
   },
   {
-    time: "10:00 AM",
+    time: "10:00",
     event: "Mentoring Round 2",
     icon: Shield,
+    duration: "10:00 - 12:00 (2h)"
   },
   {
-    time: "12:00 PM",
+    time: "12:00",
     event: "Lunch & Lounge",
     icon: Utensils,
+    duration: "12:00 - 13:00 (1h)"
   },
   {
-    time: "1:00 PM",
+    time: "13:00",
     event: "Final Development",
     icon: Codesandbox,
+    duration: "13:00 - 15:00 (2h)"
   },
   {
-    time: "3:00 PM",
+    time: "15:00",
     event: "Code Upload & Prep",
     icon: Upload,
+    duration: "15:00 - 16:00 (1h)"
   },
   {
-    time: "4:00 PM",
+    time: "16:00",
     event: "Project Demos",
     icon: MessageSquare,
+    duration: "16:00 - 18:00 (2h)"
   },
   {
-    time: "6:00 PM",
+    time: "18:00",
     event: "Judge Deliberation",
     icon: Gavel,
+    duration: "18:00 - 19:00 (1h)"
   },
   {
-    time: "7:00 PM",
+    time: "19:00",
     event: "Victory Ceremony",
     icon: Trophy,
+    duration: "19:00 - 20:00 (1h)"
   },
   {
-    time: "8:00 PM",
+    time: "20:00",
     event: "Mission Complete",
     icon: Award,
-  },
+    duration: "20:00 - Conclusion"
+  }
 ];
 
 // FAQs Data
@@ -229,7 +245,7 @@ const faqsData = {
     },
     {
       question: "What should we bring?",
-      answer: "Bring your laptop, charger, any hardware you plan to use, and a valid student ID. We recommend bringing a change of clothes and any personal items you might need."
+      answer: "Bring your laptop, charger,extension board,any hardware you plan to use, and a valid student ID. We recommend bringing a change of clothes and any personal items you might need."
     },
     {
       question: "Will there be food provided?",
@@ -367,8 +383,9 @@ const sponsors = [
       { name: "Arya Incubation Center", logo: `${AIC}` },
       { name: "IIC", logo: `${IIC}` },
       { name: "Arya Cipher Club", logo: `${Cipher}` },
-      { name: "Arya Hackathone Club", logo: `${Hack}` },
-      { name: "Arya Lincom Club", logo: `${Lincom}` }
+      { name: "Arya Hackathon Club", logo: `${Hack}` },
+      { name: "Arya Lincom Club", logo: `${Lincom}` },
+      {name :"GDG ACEIT",logo:`${GDG}`}
     ]
   },
   {
@@ -392,6 +409,127 @@ const sponsors = [
   }
 ];
 
+
+function JudgesSection() {
+  const judges = [
+    {
+      name: "Agent Jett",
+      designation: "CTO at Radiant Security",
+      description: "Expert in cybersecurity with 15+ years experience in threat intelligence and network defense.",
+      linkedin: "https://linkedin.com",
+      image: `${GDG}`
+    },
+    {
+      name: "Agent Sage",
+      designation: "AI Research Lead at Kingdom Labs",
+      description: "Pioneer in machine learning applications for healthcare and biotechnology.",
+      linkedin: "https://linkedin.com",
+      image: `${GDG}`
+    },
+    {
+      name: "Agent Brimstone",
+      designation: "Director of Engineering at Valorant Inc.",
+      description: "Specializes in scalable cloud architectures and DevOps transformations.",
+      linkedin: "https://linkedin.com",
+      image: `${GDG}`
+    },
+    {
+      name: "Agent Viper",
+      designation: "Head of Product at Venom Tech",
+      description: "Product strategist with expertise in blockchain and decentralized applications.",
+      linkedin: "https://linkedin.com",
+      image: `${GDG}`
+    },
+    {
+      name: "Agent Phoenix",
+      designation: "Lead Game Developer at Riot Forge",
+      description: "Creative director with multiple award-winning game titles under his belt.",
+      linkedin: "https://linkedin.com",
+      image: `${GDG}`
+    }
+  ];
+  
+  const duplicatedJudges = [...judges, ...judges];
+
+  return (
+    <section id="judges" className="py-20 px-4 valorant-section overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="section-title">Mission Commanders</h2>
+        
+        <div className="relative">
+          {/* Slider Container */}
+          <div className="relative h-[400px] sm:h-[450px] w-full overflow-hidden">
+            {/* Infinite Loop Slider */}
+            <div className="absolute top-0 left-0 flex h-full items-center animate-infinite-scroll hover:pause">
+              {duplicatedJudges.map((judge, index) => (
+                <div 
+                  key={`${judge.name}-${index}`} 
+                  className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 sm:mx-4"
+                >
+                  <JudgeCard judge={judge} />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Gradient Overlays */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0f1923b8] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0f1923ba] to-transparent z-10 pointer-events-none"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function JudgeCard({ judge }: { judge: { name: string; designation: string; description: string; linkedin: string; image: string } }) {
+  return (
+    <div className="theme-card valorant-card-hover flex flex-col h-full transition-transform duration-300 hover:scale-[1.02]">
+      {/* Square Image Container - Fixed size */}
+      <div className="relative w-full pt-[100%] overflow-hidden group">
+        <img 
+          src={judge.image} 
+          alt={judge.name}
+          className="absolute top-0 left-0 w-full h-full object-contain p-4 transition-all duration-500 group-hover:scale-105"
+          style={{
+            objectPosition: 'center center',
+            filter: 'brightness(0.9) contrast(1.1)'
+          }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = 'https://via.placeholder.com/400x400?text=Judge+Photo';
+            target.className = 'absolute top-0 left-0 w-full h-full object-contain bg-[#1a242d] p-4';
+          }}
+        />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923]/90 via-[#0f1923]/30 to-transparent"></div>
+      </div>
+      
+      {/* Text Content - Fixed height with overflow control */}
+      <div className="p-4 flex flex-col" style={{ height: 'calc(100% - 100%)' }}>
+        <h3 className="text-lg sm:text-xl font-bold valorant-text-gradient mb-1 line-clamp-1">{judge.name}</h3>
+        <p className="text-xs sm:text-sm text-[#ff4655] mb-2 font-medium line-clamp-1">{judge.designation}</p>
+        <p className="text-xs sm:text-sm text-gray-400 flex-1 mb-3 line-clamp-3 overflow-hidden">
+          {judge.description}
+        </p>
+        
+        {/* LinkedIn Button - Centered */}
+        <div className="mt-auto w-full flex justify-center">
+          <a 
+            href={judge.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center p-2 bg-[#0077b5] hover:bg-[#005f91] text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+            aria-label={`Connect with ${judge.name} on LinkedIn`}
+          >
+            <FaLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -473,7 +611,7 @@ function FAQsSection() {
 }
 
 function TimelineSection() {
-  const [activeDay, setActiveDay] = useState(1); // Moved inside the component
+  const [activeDay, setActiveDay] = useState(1);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const activeData = activeDay === 1 ? day1Data : day2Data;
@@ -529,12 +667,20 @@ function TimelineSection() {
                       <div className="mr-4 mt-1">
                         <Icon className="w-6 h-6 text-[#ff4655] valorant-pulse" />
                       </div>
-                      <div>
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 text-gray-400 mr-2" />
-                          <span className="text-sm text-gray-400">{item.time}</span>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 text-gray-400 mr-2" />
+                            <span className="text-sm text-gray-400">{item.time}</span>
+                          </div>
+                          {item.duration && (
+                            <span className="text-xs bg-[#ff4655]/10 text-[#ff4655] px-2 py-1 rounded">
+                              {item.duration}
+                            </span>
+                          )}
                         </div>
                         <h3 className="text-xl font-bold mb-1 valorant-text-gradient">{item.event}</h3>
+                        {/* Add description here if available in your data */}
                       </div>
                     </div>
                   </div>
@@ -631,7 +777,7 @@ function BelongingsSection() {
                   <Laptop className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-lg font-medium text-white">Laptop & Charger</h4>
+                  <h4 className="text-sm sm:text-lg font-medium text-white">Laptop , Charger & Extension Board</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Essential for hacking (no lab computers provided)</p>
                 </div>
               </div>
@@ -873,6 +1019,9 @@ function App() {
           </div>
         </div>
       </section>
+       {/* Judges Section */}
+       {/* <JudgesSection />  */}
+      
 
       {/* Sponsors Section */}
       <section id="sponsors" className="py-20 px-4 valorant-section">
