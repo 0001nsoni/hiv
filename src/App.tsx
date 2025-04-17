@@ -153,59 +153,42 @@ const day1Data = [
 
 const day2Data = [
   {
-    time: "09:00",
+    time: "08:00",
     event: "Respawn & Recap",
     icon: Coffee,
-    duration: "09:00 - 10:00 (1h)"
+    duration: "08:00 - 09:00 (1h)"
   },
   {
-    time: "10:00",
+    time: "09:00",
     event: "Mentoring Round 2",
     icon: Shield,
-    duration: "10:00 - 12:00 (2h)"
+    duration: "09:00 - 11:00 (2h)"
   },
   {
     time: "12:00",
     event: "Lunch & Lounge",
     icon: Utensils,
-    duration: "12:00 - 13:00 (1h)"
+    duration: "11:00 - 12:00 (1h)"
   },
   {
-    time: "13:00",
+    time: "12:00",
     event: "Final Development",
     icon: Codesandbox,
-    duration: "13:00 - 15:00 (2h)"
+    duration: "12:00 - 14:00 (2h)"
+  },
+  {
+    time: "14:00",
+    event: "Code Upload & Prep",
+    icon: Upload,
+    duration: "14:00 - 15:00 (1h)"
   },
   {
     time: "15:00",
-    event: "Code Upload & Prep",
-    icon: Upload,
+    event: "Victory Ceremony",
+    icon: MessageSquare,
     duration: "15:00 - 16:00 (1h)"
   },
-  {
-    time: "16:00",
-    event: "Project Demos",
-    icon: MessageSquare,
-    duration: "16:00 - 18:00 (2h)"
-  },
-  {
-    time: "18:00",
-    event: "Judge Deliberation",
-    icon: Gavel,
-    duration: "18:00 - 19:00 (1h)"
-  },
-  {
-    time: "19:00",
-    event: "Victory Ceremony",
-    icon: Trophy,
-    duration: "19:00 - 20:00 (1h)"
-  },
-  {
-    time: "20:00",
-    event: "Mission Complete",
-    icon: Award,
-    duration: "20:00 - Conclusion"
-  }
+  
 ];
 
 // FAQs Data
