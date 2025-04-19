@@ -377,7 +377,7 @@ const sponsors = [
     sponsors: [
       { name: 'Geeks For Geeks', logo: `${Gfg}` },
       // { name: "CodeUp", logo: `${cup}` },
-      {name: "Devfolio",logo:`${Dev}`}
+      // {name: "Devfolio",logo:`${Dev}`}
    
     ]
   },
