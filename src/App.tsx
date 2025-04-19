@@ -15,7 +15,16 @@ import IIC from "./sp/iic.png";
 import cup from './sp/UP.png';
 import GDG from './sp/18.jpg'
 import { FaLinkedin } from "react-icons/fa";
-
+import manktine from './sp/marktine_new_logo2.png';
+import grass from './sp/Grras Logo white 116x98px -01.png';
+import softserv from './sp/softserv.jpg';
+import origin from './sp/65537c8bbad723130b5e7dcd_origin-logo-1200x630.png';
+import rightpoint from './sp/rightpoint_logo.jpg';
+import wisflux from './sp/wisflux_logo.jpg';
+import techlab from './sp/1631309984557.jpg';
+import microsoft from './sp/microsoft_logo.jpg'
+import azure from './sp/Azure.jpg';
+import reskill from './sp/reskill.jpg';
 import valorantBg from './assets/valorant-bg.jpg';
 import hlogo from './assets/logo.png';
 import {
@@ -246,7 +255,7 @@ function CountdownTimer() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-04-26T00:00:00+05:30'); // IST timezone offset
+    const targetDate = new Date('2025-04-26T12:00:00+05:30'); // IST timezone offset
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -359,26 +368,43 @@ const mentors = [
 
 const sponsors = [
   {
-    tier: "Radianite Sponsors",
+    tier: "Powered by",
     icon: Gem,
     sponsors: [
+     
+      {name: "Microsoft", logo: `${microsoft}`},
+      {name: "Azure", logo: `${azure}`},
+      {name: "Reskill", logo: `${reskill}`}
+
+    ]
+  },
+  {
+    tier: "Principal Sponsor",  // New principal sponsor tier
+    icon: Trophy,  // Using Trophy icon for principal sponsor
+    sponsors: [
+      { name: "Marktine", logo: `${manktine}` }  // Assuming you'll add the manktime logo import
+    ]
+  },
+  
+  {
+    tier: "In association with",
+    icon: Crown,
+    sponsors: [
+      { name: 'Geeks For Geeks', logo: `${Gfg}` },
+      { name: 'GRRAS Solutions', logo: `${grass}` },
+      { name: 'SOFTSERV INC', logo: `${softserv}` },
+      { name: 'ORIGIN Digital', logo: `${origin}` },
+      { name: 'Right point', logo: `${rightpoint}` },
+      { name: 'wisflux', logo: `${wisflux}` },
+      { name: 'Tech labs ', logo: `${techlab}` },
       { name: "Arya College of Engineering & I.T.", logo: `${Arya}` },
       { name: "Arya Incubation Center", logo: `${AIC}` },
       { name: "IIC", logo: `${IIC}` },
       { name: "Arya Cipher Club", logo: `${Cipher}` },
       { name: "Arya Hackathon Club", logo: `${Hack}` },
       { name: "Arya Lincom Club", logo: `${Lincom}` },
-      {name :"GDG ACEIT",logo:`${GDG}`}
-    ]
-  },
-  {
-    tier: "Kingdom Credits",
-    icon: Crown,
-    sponsors: [
-      { name: 'Geeks For Geeks', logo: `${Gfg}` },
-      // { name: "CodeUp", logo: `${cup}` },
-      // {name: "Devfolio",logo:`${Dev}`}
-   
+      {name: "GDG ACEIT", logo: `${GDG}`},
+
     ]
   },
   {
@@ -1009,12 +1035,10 @@ function App() {
       {/* Sponsors Section */}
       <section id="sponsors" className="py-20 px-4 valorant-section">
         <div className="max-w-6xl mx-auto">
-          <h2 className="section-title">Our Allies</h2>
-          <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
-            We're grateful for the support of our strategic partners who make this operation possible.
-          </p>
+          <h2 className="section-title">Sponsors</h2>
           
-          <div className="space-y-16">
+          
+          <div className="space-y-16 ">
             {sponsors.map((sponsorTier, index) => {
               const Icon = sponsorTier.icon;
               return (
