@@ -17,6 +17,9 @@ import GDG from './sp/18.jpg'
 import { FaLinkedin } from "react-icons/fa";
 import manktine from './sp/marktine_new_logo2.png';
 import grass from './sp/grass.jpg';
+import cloudy from './sp/2.png';
+import wavvy from './sp/wavvyy.jpg';
+import nature from './sp/1.png';
 import softserv from './sp/softserv.jpg';
 import origin from './sp/65537c8bbad723130b5e7dcd_origin-logo-1200x630.png';
 import rightpoint from './sp/rightpoint_logo.jpg';
@@ -424,6 +427,10 @@ const sponsors = [
       { name: 'ORIGIN Digital', logo: `${origin}` },
       { name: 'Right point', logo: `${rightpoint}` },
       { name: 'wisflux', logo: `${wisflux}` },
+      { name: 'natural', logo: `${nature}` },
+      { name: 'wavvyy', logo: `${wavvy}` },
+      { name: 'Cloudy coders', logo: `${cloudy}` },
+
       { name: 'Tech labs ', logo: `${techlab}` },
       { name: "Arya College of Engineering & I.T.", logo: `${Arya}` },
       { name: "Arya Incubation Center", logo: `${AIC}` },
