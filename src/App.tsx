@@ -23,7 +23,7 @@ import rightpoint from './sp/rightpoint_logo.jpg';
 import wisflux from './sp/wisflux_logo.jpg';
 import techlab from './sp/1631309984557.jpg';
 import microsoft from './sp/microsoft_logo.jpg'
-import azure from './sp/Azure.jpg';
+import azure from './sp/Azure.png';
 import reskill from './sp/reskill.jpg';
 import valorantBg from './assets/valorant-bg.jpg';
 import hlogo from './assets/logo.png';
@@ -111,95 +111,123 @@ const agentRoles = {
 // Timeline Data with Valorant theme - Precise Timing
 const day1Data = [
   {
-    time: "12:00",
-    event: "Agent Check-In & Briefing",
+    time: "13:00",
+    event: "Registration & Check in of Participants",
     icon: UserCheck,
-    duration: "12:00 - 15:30 (3h 30m)"
+    duration: "13:00 - 15:45 (2h 45m)"
   },
   {
     time: "16:00",
-    event: "Opening Intel Drop & Theme Decryption",
+    event: "Inauguration Ceremony & Introductory Session, Problem Statements Revealed",
     icon: Mic,
-    duration: "16:00 - 17:00 (1h)"
-  },
-  {
-    time: "17:00",
-    event: "Snacks Break",
-    icon: Utensils,
-    duration: "17:00 - 17:30 (30m)"
+    duration: "16:00 - 17:30 (1h 30m)"
   },
   {
     time: "17:30",
-    event: "Match Start - Code Lock In",
+    event: "Participants start the coding",
     icon: Codesandbox,
     duration: "17:30 - Ongoing"
   },
   {
-    time: "20:00",
-    event: "Dinner Break",
+    time: "18:30",
+    event: "Session by any partner / sponsor",
+    icon: Users,
+    duration: "18:30 - 19:30 (1h)"
+  },
+  {
+    time: "19:30",
+    event: "Participants continue with their projects",
+    icon: Codesandbox,
+    duration: "19:30 - 20:30 (1h)"
+  },
+  {
+    time: "20:30",
+    event: "Dinner Begins (Continued in slots)",
     icon: Utensils,
-    duration: "20:00 - 22:00 (2h)"
+    duration: "20:30 - 22:00 (1h 30m)"
   },
   {
     time: "22:00",
-    event: "Fun Zone",
-    icon: Music,
+    event: "Mentor Round 1",
+    icon: Shield,
     duration: "22:00 - 23:00 (1h)"
   },
   {
     time: "23:00",
-    event: "Mentoring Round 1",
-    icon: Shield,
-    duration: "23:00 - Ongoing"
-  },
-  {
-    time: "01:00",
-    event: "Midnight Ration Drop",
-    icon: Coffee,
-    duration: "01:00 - Ongoing"
+    event: "Fun Networking sessions for participants",
+    icon: Music,
+    duration: "23:00 - 00:00 (1h)"
   }
 ];
 
 const day2Data = [
   {
-    time: "08:00",
-    event: "Respawn & Recap",
+    time: "00:00",
+    event: "FUN Zone Begins & participants continue to code",
+    icon: Music,
+    duration: "00:00 - 01:30 (1h 30m)"
+  },
+  {
+    time: "01:30",
+    event: "Mid-night snacks time",
     icon: Coffee,
-    duration: "08:00 - 09:00 (1h)"
+    duration: "01:30 - 02:30 (1h)"
   },
   {
-    time: "09:00",
-    event: "Mentoring Round 2",
-    icon: Shield,
-    duration: "09:00 - 11:00 (2h)"
+    time: "02:30",
+    event: "Sponsor / Partner Session",
+    icon: Users,
+    duration: "02:30 - 03:00 (30m)"
   },
   {
-    time: "12:00",
-    event: "Lunch & Lounge",
-    icon: Utensils,
-    duration: "11:00 - 12:00 (1h)"
-  },
-  {
-    time: "12:00",
-    event: "Final Development",
+    time: "03:00",
+    event: "Participants continue",
     icon: Codesandbox,
-    duration: "12:00 - 14:00 (2h)"
+    duration: "03:00 - 08:00 (5h)"
   },
   {
-    time: "14:00",
-    event: "Code Upload & Prep",
-    icon: Upload,
-    duration: "14:00 - 15:00 (1h)"
+    time: "08:00",
+    event: "Breakfast (Slots)",
+    icon: Utensils,
+    duration: "08:00 - 09:30 (1h 30m)"
+  },
+  {
+    time: "09:30",
+    event: "Session by Partners / Sponsors",
+    icon: Users,
+    duration: "09:30 - 10:00 (30m)"
+  },
+  {
+    time: "10:00",
+    event: "Mentor Round 2",
+    icon: Shield,
+    duration: "10:00 - 12:00 (2h)"
+  },
+  {
+    time: "12:00",
+    event: "Lunch (Slots)",
+    icon: Utensils,
+    duration: "12:00 - 13:30 (1h 30m)"
+  },
+  {
+    time: "13:30",
+    event: "Judging Round",
+    icon: Award,
+    duration: "13:30 - 15:00 (1h 30m)"
   },
   {
     time: "15:00",
-    event: "Victory Ceremony",
-    icon: MessageSquare,
+    event: "Project Submission",
+    icon: Upload,
     duration: "15:00 - 16:00 (1h)"
   },
-  
+  {
+    time: "16:00",
+    event: "Valedictory Sessions / Closing Session",
+    icon: MessageSquare,
+    duration: "16:00 - 17:00 (1h)"
+  }
 ];
-
 // FAQs Data
 const faqsData = {
   general: [
@@ -373,7 +401,7 @@ const sponsors = [
     sponsors: [
      
       {name: "Microsoft", logo: `${microsoft}`},
-      {name: "Azure", logo: `${azure}`},
+      {name: "Azure Developer Community", logo: `${azure}`},
       {name: "Reskill", logo: `${reskill}`}
 
     ]
@@ -1038,44 +1066,46 @@ function App() {
           <h2 className="section-title">Sponsors</h2>
           
           
-          <div className="space-y-16 ">
-            {sponsors.map((sponsorTier, index) => {
-              const Icon = sponsorTier.icon;
-              return (
-                <div key={index} className="theme-card valorant-card-hover p-8">
-                  <div className="flex items-center justify-center mb-8">
-                    <Icon className="w-10 h-10 text-[#ff4655] mr-3" />
-                    <h3 className="text-2xl font-bold valorant-text-gradient">
-                      {sponsorTier.tier}
-                    </h3>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    {sponsorTier.sponsors.map((sponsor, i) => (
-                      <div 
-                        key={i} 
-                        className="flex flex-col items-center justify-center p-4 bg-[#1a242d] rounded-sm hover:bg-[#2a3a4d] transition-colors"
-                      >
-                        <img 
-                          src={sponsor.logo} 
-                          alt={sponsor.name} 
-                          className="max-h-20 bg-white rounded-tl-lg rounded-br-lg border-[#ff4655] border-2 max-w-full object-contain mb-2"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.onerror = null;
-                            target.src = 'https://via.placeholder.com/150?text=Sponsor+Logo';
-                          }}
-                        />
-                        <p className="text-gray-300 text-sm text-center">{sponsor.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <div className="space-y-16">
+  {sponsors.map((sponsorTier, index) => {
+    const Icon = sponsorTier.icon;
+    return (
+      <div key={index} className="theme-card valorant-card-hover p-8">
+        <div className="flex items-center justify-center mb-8">
+          <Icon className="w-10 h-10 text-[#ff4655] mr-3" />
+          <h3 className="text-2xl font-bold valorant-text-gradient">
+            {sponsorTier.tier}
+          </h3>
+        </div>
+        
+        <div className="flex justify-center items-center flex-wrap gap-8">
+          {sponsorTier.sponsors.map((sponsor, i) => (
+            <div 
+              key={i} 
+              className="flex flex-col items-center justify-center p-4 bg-[#1a242d] rounded-sm hover:bg-[#2a3a4d] transition-colors w-48 h-48" // Fixed container size
+            >
+              <div className="w-32 h-32 flex items-center justify-center mb-2"> {/* Fixed logo container size */}
+                <img 
+                  src={sponsor.logo} 
+                  alt={sponsor.name} 
+                  className="w-full h-full object-contain p-2 bg-white rounded-tl-lg rounded-br-lg border-[#ff4655] border-2"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = 'https://via.placeholder.com/150?text=Sponsor+Logo';
+                  }}
+                />
+              </div>
+              <p className="text-gray-300 text-sm text-center">{sponsor.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>
           
-          <div className="mt-16 text-center">
+          {/* <div className="mt-16 text-center">
             <h3 className="text-xl font-bold valorant-text-gradient mb-6">Want to join our forces?</h3>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
@@ -1088,7 +1118,7 @@ function App() {
                 <span>Sponsorship Deck</span>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
