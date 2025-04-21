@@ -16,7 +16,7 @@ import cup from './sp/UP.png';
 import GDG from './sp/18.jpg'
 import { FaLinkedin } from "react-icons/fa";
 import manktine from './sp/marktine_new_logo2.png';
-import grass from './sp/Grras Logo white 116x98px -01.png';
+import grass from './sp/grass.jpg';
 import softserv from './sp/softserv.jpg';
 import origin from './sp/65537c8bbad723130b5e7dcd_origin-logo-1200x630.png';
 import rightpoint from './sp/rightpoint_logo.jpg';
