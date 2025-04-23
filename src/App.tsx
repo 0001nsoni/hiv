@@ -1051,90 +1051,93 @@ function App() {
       </span>
     </h2>
     
-    <div className="grid md:grid-cols-3 gap-8 items-end">
-      {[
-        { 
-          tier: 2, 
-          price: 11000, 
-          color: "from-[#ff4655] to-[#fd9a00]",
-          glow: "hover:shadow-[0_0_25px_rgba(253,154,0,0.3)]",
-          title: "PHOENIX AWARD",
-          features: ["Silver Radianite Medal", "VIP Queue Access", "Exclusive Player Card"]
-        },
-        { 
-          tier: 1, 
-          price: 15000, 
-          color: "from-[#ff4655] to-white",
-          glow: "hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]",
-          crown: true,
-          title: "VIPER'S PRIZE",
-          features: ["Golden Radianite Trophy", "Direct Contract Offers", "Premium Skin Bundle", "Exclusive Title"]
-        },
-        { 
-          tier: 3, 
-          price: 7500, 
-          color: "from-[#ff4655] to-[#fd9a00]",
-          glow: "hover:shadow-[0_0_20px_rgba(255,70,85,0.3)]",
-          title: "SAGE'S BOUNTY",
-          features: ["Bronze Radianite Medal", "Battlepass Boost", "Daily Bonus Radianite"]
-        }
-      ].map((item) => (
-        <div 
-          key={item.tier} 
-          className={`relative group cursor-pointer bg-[#1a242d] p-8 rounded-lg border-2 border-[#ff4655]/30 transition-all duration-300 hover:border-[#ff4655] ${item.glow} ${
-            item.tier === 1 
-              ? "md:scale-110 md:-translate-y-6 z-10 bg-gradient-to-b from-[#1a242d] to-[#0f1923] shadow-lg shadow-[#ff4655]/20"
-              : "md:scale-95 hover:scale-100"
-          }`}
-        >
-          {/* Valorant-style crown for 1st prize */}
-          {item.crown && (
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[#ff4655] animate-pulse">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 2l4 6h6l-2 8H2L0 8h6l4-6zm0 6a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
-            </div>
-          )}
-          
-          {/* Valorant-style background pattern */}
-          <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMjUgNTBjMC0xMy44IDExLjItMjUgMjUtMjVzMjUgMTEuMiAyNSA1MC0xMS4yIDI1LTI1IDI1UzI1IDYzLjggMjUgNTB6IiBzdHJva2U9IiNmZjQ2NTUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==')] bg-center"></div>
-          </div>
-          
-          <div className="relative z-10 flex flex-col items-center justify-center">
-            <h3 className={`text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r ${item.color}`}>
-              {item.title}
-            </h3>
-            
-            <div className={`text-4xl font-black mb-6 ${
-              item.tier === 1 
-                ? "text-white bg-clip-text text-transparent bg-gradient-to-b from-[#ff4655] to-[#fd9a00]"
-                : "text-gray-300"
-            }`}>
-              ₹{item.price.toLocaleString()}
-            </div>
-            
-            {/* Valorant-style feature list */}
-            {/* <ul className="w-full space-y-3 mb-6">
-              {item.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center text-gray-300 text-sm">
-                  <span className="w-2 h-2 bg-[#ff4655] rounded-full mr-3"></span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-             */}
-            {/* Valorant-style divider */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff4655] to-transparent my-4"></div>
-            
-            {/* Tier indicator */}
-            <div className="text-xs uppercase tracking-widest text-[#ff4655] font-bold">
-              RADIANITE TIER {item.tier}
-            </div>
-          </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {[
+    { 
+      tier: 1, 
+      price: 15000, 
+      color: "from-[#ff4655] to-white",
+      glow: "hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]",
+      crown: true,
+      title: "VIPER'S PRIZE",
+      features: ["Golden Radianite Trophy", "Direct Contract Offers", "Premium Skin Bundle", "Exclusive Title"],
+      order: "md:order-2" // Middle on desktop
+    },
+    { 
+      tier: 2, 
+      price: 11000, 
+      color: "from-[#ff4655] to-[#fd9a00]",
+      glow: "hover:shadow-[0_0_25px_rgba(253,154,0,0.3)]",
+      title: "PHOENIX AWARD",
+      features: ["Silver Radianite Medal", "VIP Queue Access", "Exclusive Player Card"],
+      order: "md:order-1" // Left on desktop
+    },
+    { 
+      tier: 3, 
+      price: 7500, 
+      color: "from-[#ff4655] to-[#fd9a00]",
+      glow: "hover:shadow-[0_0_20px_rgba(255,70,85,0.3)]",
+      title: "SAGE'S BOUNTY",
+      features: ["Bronze Radianite Medal", "Battlepass Boost", "Daily Bonus Radianite"],
+      order: "md:order-3" // Right on desktop
+    }
+  ].map((item) => (
+    <div 
+      key={item.tier} 
+      className={`relative group cursor-pointer bg-[#1a242d] p-8 rounded-lg border-2 border-[#ff4655]/30 transition-all duration-300 hover:border-[#ff4655] ${item.glow} ${item.order} ${
+        item.tier === 1 
+          ? "md:scale-110 md:-translate-y-6 z-10 bg-gradient-to-b from-[#1a242d] to-[#0f1923] shadow-lg shadow-[#ff4655]/20"
+          : "md:scale-95 hover:scale-100"
+      }`}
+    >
+      {/* Valorant-style crown for 1st prize */}
+      {item.crown && (
+        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[#ff4655] animate-pulse">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 2l4 6h6l-2 8H2L0 8h6l4-6zm0 6a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+          </svg>
         </div>
-      ))}
+      )}
+      
+      {/* Valorant-style background pattern */}
+      <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMjUgNTBjMC0xMy44IDExLjItMjUgMjUtMjVzMjUgMTEuMiAyNSA1MC0xMS4yIDI1LTI1IDI1UzI1IDYzLjggMjUgNTB6IiBzdHJva2U9IiNmZjQ2NTUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==')] bg-center"></div>
+      </div>
+      
+      <div className="relative z-10 flex flex-col items-center justify-center">
+        <h3 className={`text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r ${item.color}`}>
+          {item.title}
+        </h3>
+        
+        <div className={`text-4xl font-black mb-6 ${
+          item.tier === 1 
+            ? "text-white bg-clip-text text-transparent bg-gradient-to-b from-[#ff4655] to-[#fd9a00]"
+            : "text-gray-300"
+        }`}>
+          ₹{item.price.toLocaleString()}
+        </div>
+        
+        {/* Valorant-style feature list */}
+        {/* <ul className="w-full space-y-3 mb-6">
+          {item.features.map((feature, idx) => (
+            <li key={idx} className="flex items-center text-gray-300 text-sm">
+              <span className="w-2 h-2 bg-[#ff4655] rounded-full mr-3"></span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul> */}
+        
+        {/* Valorant-style divider */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff4655] to-transparent my-4"></div>
+        
+        {/* Tier indicator */}
+        <div className="text-xs uppercase tracking-widest text-[#ff4655] font-bold">
+          RADIANITE TIER {item.tier}
+        </div>
+      </div>
     </div>
+  ))}
+</div>
     
     {/* Additional note in Valorant style */}
     <div className="mt-16 text-center">
