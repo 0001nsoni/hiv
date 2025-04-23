@@ -1041,28 +1041,109 @@ function App() {
       <BelongingsSection />
 
       {/* Night Market Section */}
-      <section className="py-20 px-4 valorant-section">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="section-title">Night Market</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((tier) => (
-              <div key={tier} className="theme-card valorant-card-hover relative group cursor-pointer">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Lock className="w-12 h-12 text-[#ff4655] group-hover:opacity-100 transition-opacity valorant-spike" />
-                </div>
-                <div className="opacity-0 group-hover:opacity-0 transition-opacity">
-                  <h3 className="text-2xl font-bold mb-4 valorant-text-gradient">Radianite Tier {tier}</h3>
-                  <ul className="text-gray-300">
-                    <li className="valorant-reveal">₹{tier * 50000} Bounty</li>
-                    <li className="valorant-reveal">Premium Agent Kit</li>
-                    <li className="valorant-reveal">Direct Contract Opportunities</li>
-                  </ul>
-                </div>
-              </div>
-            ))}
+      {/* Night Market Section */}
+     {/* Prize Pool Section - Valorant Theme */}
+<section className="py-20 px-4 bg-[#0f1923 valorant-section">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4655] via-[#fd9a00] to-[#ff4655] animate-text-shine">
+        RADIANITE REWARDS
+      </span>
+    </h2>
+    
+    <div className="grid md:grid-cols-3 gap-8 items-end">
+      {[
+        { 
+          tier: 2, 
+          price: 11000, 
+          color: "from-[#ff4655] to-[#fd9a00]",
+          glow: "hover:shadow-[0_0_25px_rgba(253,154,0,0.3)]",
+          title: "PHOENIX AWARD",
+          features: ["Silver Radianite Medal", "VIP Queue Access", "Exclusive Player Card"]
+        },
+        { 
+          tier: 1, 
+          price: 15000, 
+          color: "from-[#ff4655] to-white",
+          glow: "hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]",
+          crown: true,
+          title: "VIPER'S PRIZE",
+          features: ["Golden Radianite Trophy", "Direct Contract Offers", "Premium Skin Bundle", "Exclusive Title"]
+        },
+        { 
+          tier: 3, 
+          price: 7500, 
+          color: "from-[#ff4655] to-[#fd9a00]",
+          glow: "hover:shadow-[0_0_20px_rgba(255,70,85,0.3)]",
+          title: "SAGE'S BOUNTY",
+          features: ["Bronze Radianite Medal", "Battlepass Boost", "Daily Bonus Radianite"]
+        }
+      ].map((item) => (
+        <div 
+          key={item.tier} 
+          className={`relative group cursor-pointer bg-[#1a242d] p-8 rounded-lg border-2 border-[#ff4655]/30 transition-all duration-300 hover:border-[#ff4655] ${item.glow} ${
+            item.tier === 1 
+              ? "md:scale-110 md:-translate-y-6 z-10 bg-gradient-to-b from-[#1a242d] to-[#0f1923] shadow-lg shadow-[#ff4655]/20"
+              : "md:scale-95 hover:scale-100"
+          }`}
+        >
+          {/* Valorant-style crown for 1st prize */}
+          {item.crown && (
+            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-[#ff4655] animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 2l4 6h6l-2 8H2L0 8h6l4-6zm0 6a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+            </div>
+          )}
+          
+          {/* Valorant-style background pattern */}
+          <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBkPSJNMjUgNTBjMC0xMy44IDExLjItMjUgMjUtMjVzMjUgMTEuMiAyNSA1MC0xMS4yIDI1LTI1IDI1UzI1IDYzLjggMjUgNTB6IiBzdHJva2U9IiNmZjQ2NTUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==')] bg-center"></div>
+          </div>
+          
+          <div className="relative z-10 flex flex-col items-center justify-center">
+            <h3 className={`text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r ${item.color}`}>
+              {item.title}
+            </h3>
+            
+            <div className={`text-4xl font-black mb-6 ${
+              item.tier === 1 
+                ? "text-white bg-clip-text text-transparent bg-gradient-to-b from-[#ff4655] to-[#fd9a00]"
+                : "text-gray-300"
+            }`}>
+              ₹{item.price.toLocaleString()}
+            </div>
+            
+            {/* Valorant-style feature list */}
+            {/* <ul className="w-full space-y-3 mb-6">
+              {item.features.map((feature, idx) => (
+                <li key={idx} className="flex items-center text-gray-300 text-sm">
+                  <span className="w-2 h-2 bg-[#ff4655] rounded-full mr-3"></span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+             */}
+            {/* Valorant-style divider */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff4655] to-transparent my-4"></div>
+            
+            {/* Tier indicator */}
+            <div className="text-xs uppercase tracking-widest text-[#ff4655] font-bold">
+              RADIANITE TIER {item.tier}
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+    
+    {/* Additional note in Valorant style */}
+    <div className="mt-16 text-center">
+      <p className="text-gray-400 inline-block px-4 py-2 border border-[#ff4655]/30 bg-[#1a242d]/50">
+        <span className="text-[#ff4655] font-bold">+</span> Additional rewards from our sponsors including weapon skins, player cards, and radianite points
+      </p>
+    </div>
+  </div>
+</section>
        {/* Judges Section */}
        {/* <JudgesSection />  */}
       
