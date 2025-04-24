@@ -30,6 +30,28 @@ import azure from './sp/Azure.png';
 import reskill from './sp/reskill.jpg';
 import valorantBg from './assets/valorant-bg.jpg';
 import hlogo from './assets/logo.png';
+import devesh from './mentors/deveshbirla.jpg';
+import ajay from './mentors/ajayshram.jpg';
+import ajeet from './mentors/ajeetchaudhry.jpg';
+import akhil from './mentors/akhilashtrivadi.jpg';
+import aman from './mentors/amanpandey.jpg';
+import ashutosh from './mentors/ashutosh.jpg';
+import ayush from './mentors/ayush.jpg';
+import bhuvnash from './mentors/bhuvnashwar.jpg';
+import jaghmohan from './mentors/deveshbirla.jpg';
+import manish from './mentors/manish.jpg';
+import nitin from './mentors/nitinShulkla.jpg';
+import puneet from './mentors/puneet jain.jpg';
+import rahul from './mentors/rahulvyas.jpg';
+import rajat from './mentors/rajatgoyal.jpg';
+import sarwan from './mentors/sarwan.jpg';
+import sunil from './mentors/sunilkumar.jpg'
+import satyam from './mentors/satyamgupta.jpg';
+import tapendra from './mentors/tapendra.jpg';
+import umashankar from './mentors/umashanker.jpg';
+import alok from './mentors/AS.png';
+import ripu from './mentors/1516978229053.jpeg';
+
 import {
   Gem,
   Crown,
@@ -453,121 +475,209 @@ const sponsors = [
   }
 ];
 
-
 function JudgesSection() {
   const judges = [
     {
-      name: "Agent Jett",
-      designation: "CTO at Radiant Security",
-      description: "Expert in cybersecurity with 15+ years experience in threat intelligence and network defense.",
-      linkedin: "https://linkedin.com",
-      image: `${GDG}`
+      name: "Mr. Devesh Birla",
+      designation: "Senior Consultant - Microsoft",
+      linkedin: "https://www.linkedin.com/in/devesh-birla-80106344/",
+      image: `${devesh}`
     },
     {
-      name: "Agent Sage",
-      designation: "AI Research Lead at Kingdom Labs",
-      description: "Pioneer in machine learning applications for healthcare and biotechnology.",
-      linkedin: "https://linkedin.com",
-      image: `${GDG}`
+      name: "Mr. Satyam Gupta",
+      designation: "Data Engineer - Microsoft",
+      linkedin: "https://www.linkedin.com/in/satyam-gupta-ab869663/",
+      image: `${satyam}`
     },
     {
-      name: "Agent Brimstone",
-      designation: "Director of Engineering at Valorant Inc.",
-      description: "Specializes in scalable cloud architectures and DevOps transformations.",
-      linkedin: "https://linkedin.com",
-      image: `${GDG}`
+      name: "Mr. Aman Pandey",
+      designation: "Data Engineer - Microsoft",
+      linkedin: "https://www.linkedin.com/in/amanpandey112/",
+      image: `${aman}`
     },
     {
-      name: "Agent Viper",
-      designation: "Head of Product at Venom Tech",
-      description: "Product strategist with expertise in blockchain and decentralized applications.",
-      linkedin: "https://linkedin.com",
-      image: `${GDG}`
+      name: "Mr. Ajeet Choudhary",
+      designation: "Senior Technical Consultant - Microsoft",
+      linkedin: "https://www.linkedin.com/in/ajeetchoudhary/",
+      image: `${ajeet}`
     },
     {
-      name: "Agent Phoenix",
-      designation: "Lead Game Developer at Riot Forge",
-      description: "Creative director with multiple award-winning game titles under his belt.",
-      linkedin: "https://linkedin.com",
-      image: `${GDG}`
+      name: "Mr. Punit Jain",
+      designation: "Co-Founder - Reskill",
+      linkedin: "https://www.linkedin.com/in/puntijainfarhom/",
+      image: `${puneet}`
+    },
+    {
+      name: "Mr. Akhilesh Trivedi",
+      designation: "Vice President - TechForce Services",
+      linkedin: "https://www.linkedin.com/in/akhilesh-trivedi-globalmentor-startupsentrepnruship/",
+      image: `${akhil}`
+    },
+    {
+      name: "Mr. Ashutosh Vyas",
+      designation: "CTO - SoftServ",
+      linkedin: "https://www.linkedin.com/in/ashutoshyas/",
+      image: `${ashutosh}`
+    },
+    {
+      name: "Mr. Rahul Vyas",
+      designation: "Founder - Startup Saarthi",
+      linkedin: "https://www.linkedin.com/in/vyasrahul/",
+      image: `${rahul}`
+    },
+    {
+      name: "Mr. Nitinn Shukla",
+      designation: "Assistant Vice President - Genpact",
+      linkedin: "https://www.linkedin.com/in/nitinn-shukla-a9431411/",
+      image: `${nitin}`
+    },
+    {
+      name: "Mr. Uma Shankar Arora",
+      designation: "Managing Director & Co-Founder - SevenX Consulting Pvt. Ltd.",
+      linkedin: "https://www.linkedin.com/in/usarora/",
+      image: `${umashankar}`
+    },
+    {
+      name: "Mr. Tapendra Singh Ranawat",
+      designation: "Associate Project lead - MetaCube Software Pvt. Ltd.",
+      linkedin: "https://www.linkedin.com/in/tapendraranawat/",
+      image: `${tapendra}`
+    },
+    {
+      name: "Mr. Ayush Badhera",
+      designation: "Assistant Vice President - Celebal Technologies",
+      linkedin: "https://www.linkedin.com/in/ayushbadhera/",
+      image: `${ayush}`
+    },
+    {
+      name: "Mr. Jagmohan Singh Rathore",
+      designation: "Managing Director - ORIGIN",
+      linkedin: "https://www.linkedin.com/in/jagmohansinghrathore/",
+      image: `${jaghmohan}`
+    },
+    {
+      name: "Mr. Ajay Sharma",
+      designation: "Data & AI Architect - ORIGIN",
+      linkedin: "https://www.linkedin.com/in/me-ajay-sharma/",
+      image: `${ajay}`
+    },
+    {
+      name: "Mr. Bhuvaneshwar Solanki",
+      designation: "Solutions Architect - ORIGIN",
+      linkedin: "https://www.linkedin.com/in/bhuvaneshwar-solanki-4259542a/",
+      image: `${bhuvnash}`
+    },
+    {
+      name: "Dr. Srawan Nath",
+      designation: "Project Manager - Xebia",
+      linkedin: "https://www.linkedin.com/in/dr-srawan-nath-73016b29/",
+      image: `${sarwan}`
+    },
+    {
+      name: "Dr. Sunil Kumar Jangir",
+      designation: "Senior Manager - Wisflux Tech Labs",
+      linkedin: "https://www.linkedin.com/in/dr-sunil-kumar-jangir/",
+      image: `${sunil}`
+    },
+    {
+      name: "Mr. Ripudaman Magon",
+      designation: "Director and CEO - Natural Group",
+      linkedin: "https://www.linkedin.com/in/ripudaman-magon-37265822/",
+      image: `${ripu}`
+    },
+    {
+      name: "Mr. Rajat Goyal",
+      designation: "Director - Grras Solutions",
+      linkedin: "https://www.linkedin.com/in/rajat-goyal-0a045021/",
+      image: `${rajat}`
+    },
+    {
+      name: "Mr. Alok Sharma",
+      designation: "Co-Founder - MarkTine Technology Solutions",
+      linkedin: "https://www.linkedin.com/in/marketeraloksharma/",
+      image: `${alok}`
+    },
+    {
+      name: "Mr. Manish Namdev",
+      designation: "Co-Founder - MarkTine Technology Solutions",
+      linkedin: "https://www.linkedin.com/in/manish-namdev-244ab93/",
+      image: `${manish}`
     }
   ];
-  
-  const duplicatedJudges = [...judges, ...judges];
+
+  // Create a duplicated array for seamless infinite scrolling
+  const duplicatedJudges = [...judges, ...judges, ...judges];
 
   return (
-    <section id="judges" className="py-20 px-4 valorant-section overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="section-title">Mission Commanders</h2>
-        
+    <section id="judges" className="py-20 px-4 valorant-section">
+      <div className="w-full mx-auto overflow-x-hidden">
+        <h2 className="section-title text-4xl md:text-5xl font-bold mb-8 text-center">
+          Mentors & Judges
+        </h2>
+
         <div className="relative">
           {/* Slider Container */}
-          <div className="relative h-[400px] sm:h-[450px] w-full overflow-hidden">
+          <div className="relative w-full py-8 overflow-hidden">
             {/* Infinite Loop Slider */}
-            <div className="absolute top-0 left-0 flex h-full items-center animate-infinite-scroll hover:pause">
+            <div className="animate-infinite-scroll hover:pause">
               {duplicatedJudges.map((judge, index) => (
-                <div 
-                  key={`${judge.name}-${index}`} 
-                  className="flex-shrink-0 w-[280px] sm:w-[320px] mx-2 sm:mx-4"
+                <div
+                  key={`${judge.name}-${index}`}
+                  className="flex-shrink-0 px-3"
                 >
                   <JudgeCard judge={judge} />
                 </div>
               ))}
             </div>
           </div>
-          
+
           {/* Gradient Overlays */}
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0f1923b8] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0f1923ba] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0f1923]/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0f1923]/80 to-transparent z-10 pointer-events-none"></div>
         </div>
       </div>
     </section>
   );
 }
 
-function JudgeCard({ judge }: { judge: { name: string; designation: string; description: string; linkedin: string; image: string } }) {
+function JudgeCard({ judge }: { judge: { name: string; designation: string; linkedin: string; image: string } }) {
   return (
-    <div className="theme-card valorant-card-hover flex flex-col h-full transition-transform duration-300 hover:scale-[1.02]">
-      {/* Square Image Container - Fixed size */}
-      <div className="relative w-full pt-[100%] overflow-hidden group">
-        <img 
-          src={judge.image} 
+    <div className="theme-card max-h-[450px] valorant-card-hover flex flex-col h-full w-[280px] sm:w-[320px] overflow-hidden transition-transform duration-500 hover:scale-105">
+      {/* Image Container */}
+      <div className="relative w-full aspect-square overflow-hidden group">
+        <img
+          src={judge.image || 'https://via.placeholder.com/400x400?text=No+Image'}
           alt={judge.name}
-          className="absolute top-0 left-0 w-full h-full object-contain p-4 transition-all duration-500 group-hover:scale-105"
-          style={{
-            objectPosition: 'center center',
-            filter: 'brightness(0.9) contrast(1.1)'
-          }}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.onerror = null;
-            target.src = 'https://via.placeholder.com/400x400?text=Judge+Photo';
-            target.className = 'absolute top-0 left-0 w-full h-full object-contain bg-[#1a242d] p-4';
+            target.src = 'https://via.placeholder.com/400x400?text=No+Image';
           }}
         />
-        
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923]/90 via-[#0f1923]/30 to-transparent"></div>
       </div>
-      
-      {/* Text Content - Fixed height with overflow control */}
-      <div className="p-4 flex flex-col" style={{ height: 'calc(100% - 100%)' }}>
-        <h3 className="text-lg sm:text-xl font-bold valorant-text-gradient mb-1 line-clamp-1">{judge.name}</h3>
-        <p className="text-xs sm:text-sm text-[#ff4655] mb-2 font-medium line-clamp-1">{judge.designation}</p>
-        <p className="text-xs sm:text-sm text-gray-400 flex-1 mb-3 line-clamp-3 overflow-hidden">
-          {judge.description}
+
+      {/* Text Content */}
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="text-lg font-bold valorant-text-gradient mb-2 text-center line-clamp-2">
+          {judge.name}
+        </h3>
+        <p className="text-sm text-[#ff4655] mb-4 text-center font-semibold line-clamp-2">
+          {judge.designation}
         </p>
-        
-        {/* LinkedIn Button - Centered */}
-        <div className="mt-auto w-full flex justify-center">
-          <a 
-            href={judge.linkedin} 
-            target="_blank" 
+
+        {/* LinkedIn Button */}
+        <div className="mt-auto flex justify-center">
+          <a
+            href={judge.linkedin}
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center p-2 bg-[#0077b5] hover:bg-[#005f91] text-white rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg"
+            className="inline-flex items-center justify-center p-2 bg-[#0077b5] hover:bg-[#005f91] text-white rounded-full transition-transform duration-300 transform hover:scale-110 shadow-lg"
             aria-label={`Connect with ${judge.name} on LinkedIn`}
           >
-            <FaLinkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+            <FaLinkedin className="h-5 w-5" />
           </a>
         </div>
       </div>
@@ -1148,7 +1258,7 @@ function App() {
   </div>
 </section>
        {/* Judges Section */}
-       {/* <JudgesSection />  */}
+       <JudgesSection /> 
       
 
       {/* Sponsors Section */}

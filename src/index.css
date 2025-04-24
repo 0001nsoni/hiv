@@ -143,7 +143,7 @@ body {
 }
 
 .theme-card {
-  @apply p-6 rounded-lg valorant-card-hover;
+  @apply p-6 rounded-tl-3xl rounded-br-3xl valorant-card-hover;
 }
 
 /* Valorant-specific animations */
@@ -532,25 +532,28 @@ body {
   background: rgba(255, 255, 255, 0.3);
   transition: none;
 }
+
 @keyframes infinite-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 1rem));
+    transform: translateX(-50%); /* Scroll halfway to loop seamlessly */
   }
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 20s linear infinite;
+  animation: infinite-scroll 50s linear infinite; /* Adjusted duration for smooth scrolling */
+  display: flex;
+  width: max-content; /* Dynamically adjust width based on content */
 }
 
 .hover\:pause:hover {
-  animation-play-state: paused;
+  animation-play-state: paused; /* Pause animation on hover */
 }
 
-@media (max-width: 350px) {
+@media (max-width: 768px) {
   .animate-infinite-scroll {
-    animation-duration: 40s;
+    animation-duration: 80s;
   }
 }
