@@ -51,7 +51,12 @@ import tapendra from './mentors/tapendra.jpg';
 import umashankar from './mentors/umashanker.jpg';
 import alok from './mentors/AS.png';
 import ripu from './mentors/1516978229053.jpeg';
-import NA from './mentors/image.jpg'
+import NA from './mentors/image.jpg';
+import HT from './sp/ht.png';
+import celabal from './sp/celebal.png';
+import varta from './sp/Vaarta.png';
+import vriti from './sp/Vriti.png';
+import meta  from './sp/metacube_logo.jpg'
 import {
   Gem,
   Crown,
@@ -104,6 +109,7 @@ import {
   AlertTriangle,
   Laptop,
 } from 'lucide-react';
+import { section } from 'framer-motion/client';
 
 // Loader component
 const Loader = () => {
@@ -435,7 +441,10 @@ const sponsors = [
     tier: "Principal Sponsor",  // New principal sponsor tier
     icon: Trophy,  // Using Trophy icon for principal sponsor
     sponsors: [
-      { name: "Marktine", logo: `${manktine}` }  // Assuming you'll add the manktime logo import
+      { name: "Marktine", logo: `${manktine}` },
+      { name : "vaarta.ai",logo:`${varta}`,color:"bg-black" },
+      { name : "vriti.ai",logo:`${vriti}`,color:"bg-black" },  // Assuming you'll add the manktime logo import
+        // Assuming you'll add the manktime logo import
     ]
   },
   
@@ -452,6 +461,10 @@ const sponsors = [
       { name: 'natural', logo: `${nature}` },
       { name: 'wavvyy', logo: `${wavvy}` },
       { name: 'Cloudy coders', logo: `${cloudy}` },
+      {name: "Celebal", logo: `${celabal}`},
+      {name: "metacube", logo: `${meta}`},
+      {name: "hysn technologies", logo: `${HT}`},
+
 
       { name: 'Tech labs ', logo: `${techlab}` },
       { name: "Arya College of Engineering & I.T.", logo: `${Arya}` },
@@ -460,7 +473,7 @@ const sponsors = [
       { name: "Arya Cipher Club", logo: `${Cipher}` },
       { name: "Arya Hackathon Club", logo: `${Hack}` },
       { name: "Arya Lincom Club", logo: `${Lincom}` },
-      {name: "GDG ACEIT", logo: `${GDG}`},
+     
 
     ]
   },
@@ -714,6 +727,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <a href="#about" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>About</a>
             <a href="#timeline" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Timeline</a>
             <a href="#tracks" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Tracks</a>
+            <a href="#problem-statement" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Problem Statement</a>
             <a href="#faqs" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>FAQs</a>
             <a href="#belongings" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Belongings</a>
             <a href="#contact" className="block text-gray-300 hover:text-[#ff4655] transition-colors" onClick={onClose}>Contact</a>
@@ -1029,6 +1043,7 @@ function App() {
               <a href="#about" className="text-gray-300 hover:text-[#ff4655] transition-colors">About</a>
               <a href="#timeline" className="text-gray-300 hover:text-[#ff4655] transition-colors">Timeline</a>
               <a href="#tracks" className="text-gray-300 hover:text-[#ff4655] transition-colors">Tracks</a>
+              <a href="#problem-statement" className="text-gray-300 hover:text-[#ff4655] transition-colors">Problem Statement</a>
               <a href="#faqs" className="text-gray-300 hover:text-[#ff4655] transition-colors">FAQs</a>
               <a href="#belongings" className="text-gray-300 hover:text-[#ff4655] transition-colors">Belongings</a>
               <a href="#contact" className="text-gray-300 hover:text-[#ff4655] transition-colors">Contact</a>
@@ -1094,6 +1109,7 @@ function App() {
             >
               <span className="group-hover:valorant-glitch">Know More</span>
             </button>
+            
           </div>
         </div>
       </section>
@@ -1122,6 +1138,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Problem Statement Section */}
+      <ProblemStatementSection />
 
       {/* Timeline Section */}
       <TimelineSection />
@@ -1295,13 +1314,15 @@ function App() {
           {sponsorTier.sponsors.map((sponsor, i) => (
             <div 
               key={i} 
-              className="flex flex-col items-center justify-center p-4 bg-[#1a242d] rounded-sm hover:bg-[#2a3a4d] transition-colors w-48 h-48" // Fixed container size
+              className={`flex flex-col items-center justify-center p-4 rounded-sm hover:bg-[#2a3a4d] transition-colors w-48 h-48`} // Conditional background color
             >
-              <div className="w-32 h-32 flex items-center justify-center mb-2"> {/* Fixed logo container size */}
+              <div className={`w-32 h-32  ${
+                sponsor.color ? sponsor.color : 'bg-white'
+              } flex items-center justify-center mb-2`}> {/* Fixed logo container size */}
                 <img 
                   src={sponsor.logo} 
                   alt={sponsor.name} 
-                  className="w-full h-full object-contain p-2 bg-white rounded-tl-lg rounded-br-lg border-[#ff4655] border-2"
+                  className="w-full h-full object-contain p-2 rounded-tl-lg rounded-br-lg border-[#ff4655] border-2"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;
@@ -1454,6 +1475,139 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function ProblemStatementSection() {
+  return (
+    <section id="problem-statement" className="py-20 px-4 valorant-section">
+      <div className="max-w-6xl mx-auto">
+      <h2 className="section-title">Problem Statement</h2>
+        <h3 className="text-2xl font-bold mb-6 valorant-text-gradient">Build for Bharat – AI Solutions that Serve Every Citizen</h3>
+        
+        <div className="theme-card valorant-card-hover p-8 mb-8">
+          <h4 className="text-xl font-bold mb-4 text-[#ff4655]">Challenge Overview</h4>
+          <p className="text-gray-300 mb-6">
+            Address key societal challenges in India using the power of next-generation AI models. 
+            Build solutions that are inclusive, impactful, and accessible — especially for underserved 
+            communities, small businesses, rural populations, and non-English speakers.
+          </p>
+          <p className="text-gray-300">
+            The goal is to use AI not just for innovation, but for real-world impact that bridges 
+            India's digital, economic, and linguistic divides.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Theme 1 */}
+          <div className="theme-card valorant-card-hover p-6">
+            <div className="flex items-center mb-4">
+              <Sword className="w-6 h-6 text-[#ff4655] mr-3" />
+              <h4 className="text-lg font-bold">Economic Development</h4>
+            </div>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Tools for small businesses and artisans</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>AI-based job-matching for gig workers</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Productivity solutions for micro-entrepreneurs</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Theme 2 */}
+          <div className="theme-card valorant-card-hover p-6">
+            <div className="flex items-center mb-4">
+              <Shield className="w-6 h-6 text-[#ff4655] mr-3" />
+              <h4 className="text-lg font-bold">Science & Sustainability</h4>
+            </div>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Climate resilience systems</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>AI-driven health checkers in local languages</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Voice-based crop advisory for farmers</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Theme 3 */}
+          <div className="theme-card valorant-card-hover p-6">
+            <div className="flex items-center mb-4">
+              <Blocks className="w-6 h-6 text-[#ff4655] mr-3" />
+              <h4 className="text-lg font-bold">Public Services</h4>
+            </div>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Making government services more accessible</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>AI tools for local panchayats</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Multilingual tools for migrants</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Theme 4 */}
+          <div className="theme-card valorant-card-hover p-6">
+            <div className="flex items-center mb-4">
+              <BookOpen className="w-6 h-6 text-[#ff4655] mr-3" />
+              <h4 className="text-lg font-bold">Education & Inclusion</h4>
+            </div>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>AI-powered learning in regional languages</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Tools that work natively in Indian languages</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-[#ff4655] mr-2">•</span>
+                <span>Solutions for low-bandwidth environments</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 theme-card valorant-card-hover p-8">
+          <h4 className="text-xl font-bold mb-4 text-[#ff4655]">Contextual Video Generation Challenge</h4>
+          <p className="text-gray-300 mb-6">
+            Design an AI system that generates contextually accurate videos from input text, 
+            capturing tone, emotion, and background setting to produce relevant output.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h5 className="font-bold mb-2">Example Input:</h5>
+              <p className="text-gray-400 italic">"A lonely boy walks through a stormy night looking for his dog."</p>
+            </div>
+            <div>
+              <h5 className="font-bold mb-2">Expected Output:</h5>
+              <p className="text-gray-400">Dark visuals, rain effects, sad background music, emotional expressions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
