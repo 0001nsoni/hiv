@@ -51,7 +51,7 @@ import tapendra from './mentors/tapendra.jpg';
 import umashankar from './mentors/umashanker.jpg';
 import alok from './mentors/AS.png';
 import ripu from './mentors/1516978229053.jpeg';
-
+import NA from './mentors/image.jpg'
 import {
   Gem,
   Crown,
@@ -602,6 +602,18 @@ function JudgesSection() {
       designation: "Co-Founder - MarkTine Technology Solutions",
       linkedin: "https://www.linkedin.com/in/manish-namdev-244ab93/",
       image: `${manish}`
+    },
+    {
+      name: "Mr. Rajesh Panchal",
+      designation: "Senior Consultant - Microsoft",
+      linkedin: "https://www.linkedin.com/in/rajesh-panchal-199bb124/",
+      image: `${NA}`
+    },
+    {
+      name: "Mr. Bharat Tiwari",
+      designation: "Cloud Architect at Google",
+      linkedin: "https://www.linkedin.com/in/bharat-tiwari-4213a664/",
+      image: `${NA}`
     }
   ];
 
