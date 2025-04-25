@@ -56,7 +56,9 @@ import HT from './sp/ht.png';
 import celabal from './sp/celebal.png';
 import varta from './sp/Vaarta.png';
 import vriti from './sp/Vriti.png';
-import meta  from './sp/metacube_logo.jpg'
+import meta  from './sp/metacube_logo.jpg';
+import bharat from './mentors/bharat.jpg';
+import rajesh from './mentors/rajesh.jpg';
 import {
   Gem,
   Crown,
@@ -620,13 +622,13 @@ function JudgesSection() {
       name: "Mr. Rajesh Panchal",
       designation: "Senior Consultant - Microsoft",
       linkedin: "https://www.linkedin.com/in/rajesh-panchal-199bb124/",
-      image: `${NA}`
+      image: `${rajesh}`
     },
     {
       name: "Mr. Bharat Tiwari",
       designation: "Cloud Architect at Google",
       linkedin: "https://www.linkedin.com/in/bharat-tiwari-4213a664/",
-      image: `${NA}`
+      image: `${bharat}`
     }
   ];
 
