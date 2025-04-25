@@ -38,7 +38,7 @@ import aman from './mentors/amanpandey.jpg';
 import ashutosh from './mentors/ashutosh.jpg';
 import ayush from './mentors/ayush.jpg';
 import bhuvnash from './mentors/bhuvnashwar.jpg';
-import jaghmohan from './mentors/deveshbirla.jpg';
+import jaghmohan from './mentors/jagmohan.jpg';
 import manish from './mentors/manish.jpg';
 import nitin from './mentors/nitinShulkla.jpg';
 import puneet from './mentors/puneet jain.jpg';
